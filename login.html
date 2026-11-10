@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Log in to your OptiKraft customer account.">
+    <title>My Account Login — OptiKraft</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/jpeg" href="OptiKraft-Logo.jpeg">
+    <script src="script.js" defer></script>
+</head>
+<body id="top">
+    <a class="skip-link" href="#main">Skip to main content</a>
+
+    <header>
+        <div id="top-header">
+            <div class="container top-header-flex">
+                <ul class="header-links">
+                    <li><span class="icon-red" aria-hidden="true">☎</span> <a href="tel:+60390013441">+60 3-9001 3441</a></li>
+                    <li><span class="icon-red" aria-hidden="true">✉</span> <a href="mailto:support@optikraft.my">support@optikraft.my</a></li>
+                    <li><span class="icon-red" aria-hidden="true">📍</span> <a href="https://maps.app.goo.gl/UQxLYgRSZ3BveFzy9" target="_blank" rel="noopener">UPNM Sungai Besi, KL</a></li>
+                </ul>
+                <ul class="header-links">
+                    <li id="accountItem"><span class="icon-red" aria-hidden="true">👤</span> <a id="accountLink" href="login.html">My Account</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div id="header">
+            <div class="container header-grid">
+                <div class="header-logo">
+                    <a href="index.html" class="logo" title="OptiKraft Cameras &amp; Parts Home">
+                        <img src="OptiKraft-Logo.jpeg" alt="OptiKraft Cameras &amp; Parts logo">
+                    </a>
+                </div>
+
+                <div class="header-search">
+                    <form action="products.html" method="get" role="search">
+                        <select class="input-select" name="cat" aria-label="Category">
+                            <option value="all">All Categories</option>
+                            <option value="cameras">Cameras</option>
+                            <option value="parts">OEM Parts</option>
+                            <option value="lenses">Lenses</option>
+                        </select>
+                        <input class="input" type="text" name="q" placeholder="Search cameras, sensors, shutters..." aria-label="Search products">
+                        <button type="submit" class="search-btn">Search</button>
+                    </form>
+                </div>
+
+                <div class="header-ctn">
+                    <div class="ctn-item">
+                        <a href="#" role="button" onclick="showWishlist(); return false;">
+                            <span class="ctn-icon" aria-hidden="true">♡</span>
+                            <span>Your Wishlist</span>
+                            <div class="qty" id="wishlistQtyBadge">0</div>
+                        </a>
+                    </div>
+
+                    <div class="ctn-item">
+                        <a href="cart.html" role="button" aria-haspopup="true">
+                            <span class="ctn-icon" aria-hidden="true">🛒</span>
+                            <span>Your Cart</span>
+                            <div class="qty" id="cartQtyBadge">0</div>
+                        </a>
+                        <div class="cart-dropdown" id="cartDropdown">
+                            <div class="cart-list" id="cartItemsList">
+                                <p class="cart-empty">Your cart is empty.</p>
+                            </div>
+                            <div class="cart-summary">
+                                <small id="cartSummaryCount">0 Item(s) selected</small>
+                                <h5 id="cartSubTotalText">SUBTOTAL: RM 0.00</h5>
+                            </div>
+                            <div class="cart-btns">
+                                <a href="cart.html">View Cart</a>
+                                <a href="checkout.html" class="checkout-link">Checkout</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="ctn-item menu-toggle">
+                        <a href="#" role="button" aria-controls="mainNav" onclick="toggleMobileMenu(); return false;">
+                            <span class="ctn-icon" aria-hidden="true">☰</span>
+                            <span>Menu</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <nav id="navigation" aria-label="Main">
+        <div class="container">
+            <ul class="main-nav" id="mainNav">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#hot-deal">Hot Deals</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="products.html">Cameras &amp; Parts</a></li>
+                <li><a href="products.html#services">Repair Services</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li data-guest-only><a href="login.html" class="active" aria-current="page">Login</a></li>
+                <li data-guest-only><a href="signup.html">Sign Up</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main id="main" class="container section">
+        <div class="card-box" style="max-width:520px; margin:0 auto;">
+            <span class="eyebrow">Member Portal</span>
+            <h1 class="page-h1">My Account Login</h1>
+
+            <form id="loginForm" method="POST" action="handle_auth.php" onsubmit="return handleLogin(event)">
+                <input type="hidden" name="recipient" value="support@optikraft.my">
+
+                <fieldset class="electro-fieldset">
+                    <legend>Account Credentials</legend>
+
+                    <div class="form-group">
+                        <label for="loginEmail">Email *</label>
+                        <input type="email" id="loginEmail" name="nama" class="form-control" placeholder="name@example.com" autocomplete="username" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="pwd">Password *</label>
+                        <input type="password" id="pwd" name="pwd" class="form-control" placeholder="Enter your password" autocomplete="current-password" required>
+                    </div>
+
+                    <div class="choice-row" style="justify-content:space-between; font-size:13px;">
+                        <label class="check-label"><input type="checkbox" id="remember" name="remember" value="yes"> Remember me</label>
+                        <label class="check-label"><input type="checkbox" id="showPwd" aria-controls="pwd"> Show password</label>
+                    </div>
+                </fieldset>
+
+                <div style="display:flex; gap:10px;">
+                    <input type="submit" name="Submit" value="Log In" class="primary-btn" style="flex:1;">
+                    <input type="reset" name="reset" value="Reset" class="primary-btn btn-dark">
+                </div>
+
+                <p id="loginMsg" class="form-msg" role="status" aria-live="polite"></p>
+            </form>
+
+            <p class="demo-note">Demo site: THIS IS DEMO - IKMIL</p>
+
+            <p class="card-foot">
+                New to OptiKraft? <a href="signup.html" class="red-link">Create an Account →</a>
+            </p>
+        </div>
+    </main>
+
+    <footer id="footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer">
+                    <h3 class="footer-title">About Us</h3>
+                    <a href="index.html">
+                        <img src="OptiKraft-Logo.jpeg" alt="OptiKraft Cameras &amp; Parts logo" class="footer-logo-img">
+                    </a>
+                    <p style="margin-bottom:15px;">OptiKraft Technologies supplies flagship cameras, OEM replacement parts, and studio calibration services.</p>
+                    <ul class="footer-links">
+                        <li><a href="https://maps.app.goo.gl/UQxLYgRSZ3BveFzy9" target="_blank" rel="noopener">📍 Kem Perdana Sungai Besi, KL</a></li>
+                        <li><a href="tel:+60390013441">☎ +60 3-9001 3441</a></li>
+                        <li><a href="mailto:support@optikraft.my">✉ support@optikraft.my</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer">
+                    <h3 class="footer-title">Categories</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html#hot-deal">Hot deals</a></li>
+                        <li><a href="products.html?cat=cameras">Camera Bodies</a></li>
+                        <li><a href="products.html?cat=parts">OEM Spare Parts</a></li>
+                        <li><a href="products.html?cat=lenses">Prime Lenses</a></li>
+                        <li><a href="products.html#services">Repair Services</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer">
+                    <h3 class="footer-title">Information</h3>
+                    <ul class="footer-links">
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="OptiKraft_Catalog.pdf" download>Download Catalog (PDF)</a></li>
+                        <li><a href="https://www.leica-camera.com" target="_blank" rel="noopener">Partner: Leica Camera ↗</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer">
+                    <h3 class="footer-title">Service</h3>
+                    <ul class="footer-links">
+                        <li><a href="login.html">My Account</a></li>
+                        <li><a href="signup.html">Create Account</a></li>
+                        <li><a href="cart.html">View Cart</a></li>
+                        <li><a href="#top">↑ Back to Top</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div id="bottom-footer">
+            <div class="container">
+                <ul class="footer-payments" aria-label="Accepted payment methods">
+                    <li>VISA</li>
+                    <li>MASTERCARD</li>
+                    <li>FPX</li>
+                    <li>PAYPAL</li>
+                </ul>
+                <span class="copyright">
+                    Copyright &copy; 2026 OptiKraft Technologies. All rights reserved | Adapted from Electro Template for TSP 3243.
+                </span>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+    document.getElementById("showPwd").addEventListener("change", function () {
+        document.getElementById("pwd").type = this.checked ? "text" : "password";
+    });
+
+    function handleLogin(event) {
+        if (usePhp()) return true;
+        event.preventDefault();
+
+        var email = document.getElementById("loginEmail").value.trim();
+        var pass = document.getElementById("pwd").value;
+        var remember = document.getElementById("remember").checked;
+        var msg = document.getElementById("loginMsg");
+
+        if (email === "" || pass === "") {
+            msg.className = "form-msg msg-error";
+            msg.textContent = "⚠ Enter your email and password.";
+            return false;
+        }
+
+        var result = loginUser(email, pass, remember);
+        if (!result.ok) {
+            msg.className = "form-msg msg-error";
+            msg.textContent = "⚠ " + result.error;
+            return false;
+        }
+
+        msg.className = "form-msg msg-success";
+        msg.textContent = "✔ Welcome back, " + result.name + "! Redirecting to the storefront...";
+        setTimeout(function () { window.location.href = "index.html"; }, 1200);
+        return false;
+    }
+    </script>
+</body>
+</html>

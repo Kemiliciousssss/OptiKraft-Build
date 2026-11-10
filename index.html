@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="OptiKraft: mirrorless cameras, OEM replacement sensors, shutter assemblies and optical calibration services in Malaysia.">
+    <title>OptiKraft &amp; Partner</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/jpeg" href="OptiKraft-Logo.jpeg">
+    <script src="script.js" defer></script>
+</head>
+<body id="top">
+    <a class="skip-link" href="#main">Skip to main content</a>
+
+    <header>
+        <div id="top-header">
+            <div class="container top-header-flex">
+                <ul class="header-links">
+                    <li><span class="icon-red" aria-hidden="true">☎</span> <a href="tel:+60390013441">+60 3-9001 3441</a></li>
+                    <li><span class="icon-red" aria-hidden="true">✉</span> <a href="mailto:support@optikraft.my">support@optikraft.my</a></li>
+                    <li><span class="icon-red" aria-hidden="true">📍</span> <a href="https://maps.app.goo.gl/UQxLYgRSZ3BveFzy9" target="_blank" rel="noopener">UPNM Sungai Besi, KL</a></li>
+                </ul>
+                <ul class="header-links">
+                    <li>
+                        <label for="currencyPicker" class="visually-hidden">Currency</label>
+                        <select id="currencyPicker" class="currency-picker" onchange="switchCurrency(this)">
+                            <option value="MYR">MYR (RM)</option>
+                            <option value="USD">USD ($)</option>
+                            <option value="SGD">SGD</option>
+                        </select>
+                    </li>
+                    <li id="accountItem"><span class="icon-red" aria-hidden="true">👤</span> <a id="accountLink" href="login.html">My Account</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div id="header">
+            <div class="container header-grid">
+                <div class="header-logo">
+                    <a href="index.html" class="logo" title="OptiKraft Cameras &amp; Parts Home">
+                        <img src="OptiKraft-Logo.jpeg" alt="OptiKraft Cameras &amp; Parts logo">
+                    </a>
+                </div>
+
+                <div class="header-search">
+                    <form action="products.html" method="get" role="search">
+                        <select class="input-select" name="cat" aria-label="Category">
+                            <option value="all">All Categories</option>
+                            <option value="cameras">Cameras</option>
+                            <option value="parts">OEM Parts</option>
+                            <option value="lenses">Lenses</option>
+                        </select>
+                        <input class="input" type="text" name="q" placeholder="Search cameras, sensors, shutters..." aria-label="Search products">
+                        <button type="submit" class="search-btn">Search</button>
+                    </form>
+                </div>
+
+                <div class="header-ctn">
+                    <div class="ctn-item">
+                        <a href="#" role="button" onclick="showWishlist(); return false;">
+                            <span class="ctn-icon" aria-hidden="true">♡</span>
+                            <span>Your Wishlist</span>
+                            <div class="qty" id="wishlistQtyBadge">0</div>
+                        </a>
+                    </div>
+
+                    <div class="ctn-item">
+                        <a href="cart.html" role="button" aria-haspopup="true">
+                            <span class="ctn-icon" aria-hidden="true">🛒</span>
+                            <span>Your Cart</span>
+                            <div class="qty" id="cartQtyBadge">0</div>
+                        </a>
+                        <div class="cart-dropdown" id="cartDropdown">
+                            <div class="cart-list" id="cartItemsList">
+                                <p class="cart-empty">Your cart is empty.</p>
+                            </div>
+                            <div class="cart-summary">
+                                <small id="cartSummaryCount">0 Item(s) selected</small>
+                                <h5 id="cartSubTotalText">SUBTOTAL: RM 0.00</h5>
+                            </div>
+                            <div class="cart-btns">
+                                <a href="cart.html">View Cart</a>
+                                <a href="checkout.html" class="checkout-link">Checkout</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="ctn-item menu-toggle">
+                        <a href="#" role="button" aria-controls="mainNav" onclick="toggleMobileMenu(); return false;">
+                            <span class="ctn-icon" aria-hidden="true">☰</span>
+                            <span>Menu</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <nav id="navigation" aria-label="Main">
+        <div class="container">
+            <ul class="main-nav" id="mainNav">
+                <li><a href="index.html" class="active" aria-current="page">Home</a></li>
+                <li><a href="index.html#hot-deal">Hot Deals</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="products.html">Cameras &amp; Parts</a></li>
+                <li><a href="products.html#services">Repair Services</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li data-guest-only><a href="login.html">Login</a></li>
+                <li data-guest-only><a href="signup.html">Sign Up</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main id="main">
+        <!-- WELCOME + SHOP GRID -->
+        <section class="section">
+            <div class="container">
+                <div class="card-box welcome-box">
+                    <div>
+                        <strong class="welcome-title">Welcome To OptiKraft</strong>
+                        <p class="muted">Malaysia's premier optical hardware storefront for mirrorless cameras, OEM replacement sensors, shutter assemblies and studio calibration.</p>
+                    </div>
+                    <div class="welcome-actions">
+                        <a href="https://www.sony.com.my" target="_blank" rel="noopener" class="primary-btn btn-sm btn-dark">Certified Sony Partner</a>
+                        <a href="OptiKraft_Catalog.pdf" download class="primary-btn btn-sm">Download PDF Catalog</a>
+                    </div>
+                </div>
+
+                <div class="shop-grid">
+                    <div class="shop">
+                        <div class="shop-img"><img src="https://i.redd.it/mb9y05or5t371.jpg" alt="Cameras set" loading="lazy"></div>
+                        <div class="shop-body"><h3>Cameras<br>Set</h3><a href="products.html?cat=cameras" class="cta-btn">Shop Now</a></div>
+                    </div>
+                    <div class="shop">
+                        <div class="shop-img"><img src="https://plus.unsplash.com/premium_photo-1723662135626-50b0c5547e1c?fm=jpg&amp;q=60&amp;w=3000&amp;auto=format&amp;fit=crop&amp;ixlib=rb-4.1.0&amp;ixid=NHwxMjA3fDA%3D" alt="Camera parts set" loading="lazy"></div>
+                        <div class="shop-body"><h3>OEM Parts<br>Set</h3><a href="products.html?cat=parts" class="cta-btn">Shop Now</a></div>
+                    </div>
+                    <div class="shop">
+                        <div class="shop-img"><img src="https://i.ebayimg.com/images/g/nfIAAOSw6N9kehpG/s-l400.jpg" alt="Repairs collection" loading="lazy"></div>
+                        <div class="shop-body"><h3>Repairs<br>Collection</h3><a href="products.html#services" class="cta-btn">Fix Here</a></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- NEW PRODUCTS -->
+        <section class="section">
+            <div class="container">
+                <div class="section-title">
+                    <h2 class="title">New Products</h2>
+                    <ul class="section-tab-nav">
+                        <li><a href="#" class="active" onclick="filterTab('all', this); return false;">All Hardware</a></li>
+                        <li><a href="#" onclick="filterTab('cameras', this); return false;">Cameras</a></li>
+                        <li><a href="#" onclick="filterTab('parts', this); return false;">OEM Parts</a></li>
+                        <li><a href="#" onclick="filterTab('lenses', this); return false;">Lenses &amp; Rigs</a></li>
+                    </ul>
+                </div>
+                <div class="products-grid" id="newProductsGrid">
+                    <div class="product" data-cat="cameras">
+                        <div class="product-img">
+                            <a href="products.html"><img src="https://images.unsplash.com/photo-1502920917128-1aa500764cbd?auto=format&amp;fit=crop&amp;w=600&amp;q=80" alt="OptiKraft X1 Mirrorless Body" width="300" height="300" loading="lazy"></a>
+                            <div class="product-label"><span class="sale">-15%</span><span class="new">NEW</span></div>
+                            <div class="add-to-cart">
+                                <button type="button" class="add-to-cart-btn" onclick="addToCart('OptiKraft X1 Mirrorless Body', 6499, 'https://images.unsplash.com/photo-1502920917128-1aa500764cbd?auto=format&amp;fit=crop&amp;w=200&amp;q=80')">🛒 add to cart</button>
+                            </div>
+                        </div>
+                        <div class="product-body">
+                            <p class="product-category">Cameras</p>
+                            <h3 class="product-name"><a href="products.html">OptiKraft X1 Mirrorless Body</a></h3>
+                            <h4 class="product-price js-price" data-myr="6499" data-old-myr="7650">RM 6,499.00 <del class="product-old-price">RM 7,650.00</del></h4>
+                            <div class="product-rating" aria-label="5 out of 5 stars">★★★★★</div>
+                            <div class="product-btns">
+                                <button type="button" onclick="addToWishlist('OptiKraft X1 Mirrorless Body')" title="Add to wishlist" aria-label="Add OptiKraft X1 Mirrorless Body to wishlist">♡</button>
+                                <button type="button" onclick="window.location.href='products.html'" title="Quick view" aria-label="Quick view OptiKraft X1 Mirrorless Body">👁</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product" data-cat="parts">
+                        <div class="product-img">
+                            <a href="products.html"><img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&amp;fit=crop&amp;w=600&amp;q=80" alt="MK-IV 35mm CMOS Sensor Unit" width="300" height="300" loading="lazy"></a>
+                            <div class="product-label"><span class="sale">-14%</span><span class="new">NEW</span></div>
+                            <div class="add-to-cart">
+                                <button type="button" class="add-to-cart-btn" onclick="addToCart('MK-IV 35mm CMOS Sensor Unit', 1450, 'https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&amp;fit=crop&amp;w=200&amp;q=80')">🛒 add to cart</button>
+                            </div>
+                        </div>
+                        <div class="product-body">
+                            <p class="product-category">OEM Parts</p>
+                            <h3 class="product-name"><a href="products.html">MK-IV 35mm CMOS Sensor Unit</a></h3>
+                            <h4 class="product-price js-price" data-myr="1450" data-old-myr="1690">RM 1,450.00 <del class="product-old-price">RM 1,690.00</del></h4>
+                            <div class="product-rating" aria-label="5 out of 5 stars">★★★★★</div>
+                            <div class="product-btns">
+                                <button type="button" onclick="addToWishlist('MK-IV 35mm CMOS Sensor Unit')" title="Add to wishlist" aria-label="Add MK-IV 35mm CMOS Sensor Unit to wishlist">♡</button>
+                                <button type="button" onclick="window.location.href='products.html'" title="Quick view" aria-label="Quick view MK-IV 35mm CMOS Sensor Unit">👁</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product" data-cat="lenses">
+                        <div class="product-img">
+                            <a href="products.html"><img src="https://images.unsplash.com/photo-1617005082133-548c4dd27f35?auto=format&amp;fit=crop&amp;w=600&amp;q=80" alt="KraftGlass 50mm f/1.2 Prime" width="300" height="300" loading="lazy"></a>
+                            <div class="product-label"><span class="sale">-22%</span></div>
+                            <div class="add-to-cart">
+                                <button type="button" class="add-to-cart-btn" onclick="addToCart('KraftGlass 50mm f/1.2 Prime', 3290, 'https://images.unsplash.com/photo-1617005082133-548c4dd27f35?auto=format&amp;fit=crop&amp;w=200&amp;q=80')">🛒 add to cart</button>
+                            </div>
+                        </div>
+                        <div class="product-body">
+                            <p class="product-category">Lenses &amp; Rigs</p>
+                            <h3 class="product-name"><a href="products.html">KraftGlass 50mm f/1.2 Prime</a></h3>
+                            <h4 class="product-price js-price" data-myr="3290" data-old-myr="4200">RM 3,290.00 <del class="product-old-price">RM 4,200.00</del></h4>
+                            <div class="product-rating" aria-label="5 out of 5 stars">★★★★★</div>
+                            <div class="product-btns">
+                                <button type="button" onclick="addToWishlist('KraftGlass 50mm f/1.2 Prime')" title="Add to wishlist" aria-label="Add KraftGlass 50mm f/1.2 Prime to wishlist">♡</button>
+                                <button type="button" onclick="window.location.href='products.html'" title="Quick view" aria-label="Quick view KraftGlass 50mm f/1.2 Prime">👁</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product" data-cat="parts">
+                        <div class="product-img">
+                            <a href="products.html"><img src="https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?auto=format&amp;fit=crop&amp;w=600&amp;q=80" alt="Carbon Shutter Blade Unit" width="300" height="300" loading="lazy"></a>
+                            <div class="product-label"><span class="sale">-24%</span></div>
+                            <div class="add-to-cart">
+                                <button type="button" class="add-to-cart-btn" onclick="addToCart('Carbon Shutter Blade Unit', 420, 'https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?auto=format&amp;fit=crop&amp;w=200&amp;q=80')">🛒 add to cart</button>
+                            </div>
+                        </div>
+                        <div class="product-body">
+                            <p class="product-category">OEM Parts</p>
+                            <h3 class="product-name"><a href="products.html">Carbon Shutter Blade Unit</a></h3>
+                            <h4 class="product-price js-price" data-myr="420" data-old-myr="550">RM 420.00 <del class="product-old-price">RM 550.00</del></h4>
+                            <div class="product-rating" aria-label="5 out of 5 stars">★★★★★</div>
+                            <div class="product-btns">
+                                <button type="button" onclick="addToWishlist('Carbon Shutter Blade Unit')" title="Add to wishlist" aria-label="Add Carbon Shutter Blade Unit to wishlist">♡</button>
+                                <button type="button" onclick="window.location.href='products.html'" title="Quick view" aria-label="Quick view Carbon Shutter Blade Unit">👁</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- HOT DEAL -->
+        <section id="hot-deal" class="section">
+            <div class="container">
+                <div class="hot-deal">
+                    <ul class="hot-deal-countdown" aria-label="Time left on this deal">
+                        <li><div><h3 id="cdDays">02</h3><span>Days</span></div></li>
+                        <li><div><h3 id="cdHours">10</h3><span>Hours</span></div></li>
+                        <li><div><h3 id="cdMins">34</h3><span>Mins</span></div></li>
+                        <li><div><h3 id="cdSecs">59</h3><span>Secs</span></div></li>
+                    </ul>
+                    <h2>hot deal this week</h2>
+                    <p>New Camera &amp; OEM Parts Collection Up to 25% OFF</p>
+                    <a class="primary-btn" href="products.html">Shop now</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- IMAGE MAP -->
+        <section class="section">
+            <div class="container">
+                <div class="card-box two-col-grid" style="align-items:center;">
+                    <div>
+                        <h2 class="title map-title">Interactive Workbench Image Map</h2>
+                        <p class="muted">Click the camera rig, the spare parts area, or the optical calibration hotspot on the image to jump straight to that page.</p>
+                    </div>
+                    <div>
+                        <img src="https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&amp;fit=crop&amp;w=500&amp;h=400&amp;q=80" alt="Camera workbench with a computer, a phone and a cup of coffee" usemap="#workmap" width="400" height="379" class="map-img">
+                        <map name="workmap">
+                            <area shape="rect" coords="34,44,270,350" alt="Browse camera bodies" href="products.html?cat=cameras" title="Browse Camera Bodies">
+                            <area shape="rect" coords="290,172,333,250" alt="Browse OEM spare parts" href="products.html?cat=parts" title="Browse OEM Spare Parts">
+                            <area shape="circle" coords="337,300,44" alt="Book optical calibration" href="contact.html" title="Book Optical Calibration">
+                        </map>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- TOP SELLING WIDGETS -->
+        <section class="section">
+            <div class="container">
+                <div class="widget-columns">
+                    <div class="widget-col"><h3 class="title">Top Selling Cameras</h3>
+                        <div class="product-widget">
+                            <img src="https://images.unsplash.com/photo-1502920917128-1aa500764cbd?auto=format&amp;fit=crop&amp;w=200&amp;q=80" alt="OptiKraft X1 Mirrorless Body" width="60" height="60" loading="lazy">
+                            <div class="product-body">
+                                <p class="widget-cat">CAMERAS</p>
+                                <h4><a href="products.html">OptiKraft X1 Mirrorless Body</a></h4>
+                                <p class="price js-price" data-myr="6499" data-old-myr="7650">RM 6,499.00 <del class="product-old-price">RM 7,650.00</del></p>
+                            </div>
+                        </div>
+                        <div class="product-widget">
+                            <img src="https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&amp;fit=crop&amp;w=200&amp;q=80" alt="OptiKraft Pro Cinema Rig" width="60" height="60" loading="lazy">
+                            <div class="product-body">
+                                <p class="widget-cat">CAMERAS</p>
+                                <h4><a href="products.html">OptiKraft Pro Cinema Rig</a></h4>
+                                <p class="price js-price" data-myr="7850" data-old-myr="8999">RM 7,850.00 <del class="product-old-price">RM 8,999.00</del></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="widget-col"><h3 class="title">Top Selling OEM Parts</h3>
+                        <div class="product-widget">
+                            <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&amp;fit=crop&amp;w=200&amp;q=80" alt="MK-IV 35mm CMOS Sensor Unit" width="60" height="60" loading="lazy">
+                            <div class="product-body">
+                                <p class="widget-cat">OEM PARTS</p>
+                                <h4><a href="products.html">MK-IV 35mm CMOS Sensor Unit</a></h4>
+                                <p class="price js-price" data-myr="1450" data-old-myr="1690">RM 1,450.00 <del class="product-old-price">RM 1,690.00</del></p>
+                            </div>
+                        </div>
+                        <div class="product-widget">
+                            <img src="https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?auto=format&amp;fit=crop&amp;w=200&amp;q=80" alt="CNC Titanium E-Mount Bayonet Ring" width="60" height="60" loading="lazy">
+                            <div class="product-body">
+                                <p class="widget-cat">OEM PARTS</p>
+                                <h4><a href="products.html">CNC Titanium E-Mount Bayonet Ring</a></h4>
+                                <p class="price js-price" data-myr="195" data-old-myr="260">RM 195.00 <del class="product-old-price">RM 260.00</del></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="widget-col"><h3 class="title">Top Optical Services</h3>
+                        <div class="product-widget">
+                            <img src="https://images.unsplash.com/photo-1581092335397-9583fe92d232?auto=format&amp;fit=crop&amp;w=200&amp;q=80" alt="Cleanroom Sensor Calibration" width="60" height="60" loading="lazy">
+                            <div class="product-body">
+                                <p class="widget-cat">LAB SERVICE</p>
+                                <h4><a href="products.html#services">Cleanroom Sensor Calibration</a></h4>
+                                <p class="price js-price" data-myr="120" data-old-myr="180">RM 120.00 <del class="product-old-price">RM 180.00</del></p>
+                            </div>
+                        </div>
+                        <div class="product-widget">
+                            <img src="https://images.unsplash.com/photo-1617005082133-548c4dd27f35?auto=format&amp;fit=crop&amp;w=200&amp;q=80" alt="Ultrasonic Lens Fungus Removal" width="60" height="60" loading="lazy">
+                            <div class="product-body">
+                                <p class="widget-cat">LAB SERVICE</p>
+                                <h4><a href="products.html#services">Ultrasonic Lens Fungus Removal</a></h4>
+                                <p class="price js-price" data-myr="380" data-old-myr="450">RM 380.00 <del class="product-old-price">RM 450.00</del></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- NEWSLETTER -->
+        <section id="newsletter" class="section">
+            <div class="container">
+                <div class="newsletter">
+                    <p>Sign Up for the <strong>NEWSLETTER</strong></p>
+                    <form onsubmit="event.preventDefault(); alert('Thank you for subscribing to the OptiKraft Newsletter!'); this.reset();">
+                        <input class="input" type="email" placeholder="Enter Your Email" aria-label="Email address" autocomplete="email" required>
+                        <button type="submit" class="newsletter-btn">✉ Subscribe</button>
+                    </form>
+                    <ul class="newsletter-follow">
+                        <li><a href="https://facebook.com" target="_blank" rel="noopener" aria-label="Facebook">f</a></li>
+                        <li><a href="https://x.com" target="_blank" rel="noopener" aria-label="X">𝕏</a></li>
+                        <li><a href="https://instagram.com" target="_blank" rel="noopener" aria-label="Instagram">IG</a></li>
+                        <li><a href="https://youtube.com" target="_blank" rel="noopener" aria-label="YouTube">▶</a></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer id="footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer">
+                    <h3 class="footer-title">About Us</h3>
+                    <a href="index.html">
+                        <img src="OptiKraft-Logo.jpeg" alt="OptiKraft Cameras &amp; Parts logo" class="footer-logo-img">
+                    </a>
+                    <p style="margin-bottom:15px;">OptiKraft Technologies supplies flagship cameras, OEM replacement parts, and studio calibration services.</p>
+                    <ul class="footer-links">
+                        <li><a href="https://maps.app.goo.gl/UQxLYgRSZ3BveFzy9" target="_blank" rel="noopener">📍 Kem Perdana Sungai Besi, KL</a></li>
+                        <li><a href="tel:+60390013441">☎ +60 3-9001 3441</a></li>
+                        <li><a href="mailto:support@optikraft.my">✉ support@optikraft.my</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer">
+                    <h3 class="footer-title">Categories</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html#hot-deal">Hot deals</a></li>
+                        <li><a href="products.html?cat=cameras">Camera Bodies</a></li>
+                        <li><a href="products.html?cat=parts">OEM Spare Parts</a></li>
+                        <li><a href="products.html?cat=lenses">Prime Lenses</a></li>
+                        <li><a href="products.html#services">Repair Services</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer">
+                    <h3 class="footer-title">Information</h3>
+                    <ul class="footer-links">
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="OptiKraft_Catalog.pdf" download>Download Catalog (PDF)</a></li>
+                        <li><a href="https://www.leica-camera.com" target="_blank" rel="noopener">Partner: Leica Camera ↗</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer">
+                    <h3 class="footer-title">Service</h3>
+                    <ul class="footer-links">
+                        <li><a href="login.html">My Account</a></li>
+                        <li><a href="signup.html">Create Account</a></li>
+                        <li><a href="cart.html">View Cart</a></li>
+                        <li><a href="#top">↑ Back to Top</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div id="bottom-footer">
+            <div class="container">
+                <ul class="footer-payments" aria-label="Accepted payment methods">
+                    <li>VISA</li>
+                    <li>MASTERCARD</li>
+                    <li>FPX</li>
+                    <li>PAYPAL</li>
+                </ul>
+                <span class="copyright">
+                    Copyright &copy; 2026 OptiKraft Technologies. All rights reserved | Adapted from Electro Template for TSP 3243.
+                </span>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

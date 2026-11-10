@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contact the OptiKraft optical lab, send a service inquiry or estimate your hardware order cost.">
+    <title>Contact Us &amp; Service Estimator — OptiKraft</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/jpeg" href="OptiKraft-Logo.jpeg">
+    <script src="script.js" defer></script>
+</head>
+<body id="top">
+    <a class="skip-link" href="#main">Skip to main content</a>
+
+    <header>
+        <div id="top-header">
+            <div class="container top-header-flex">
+                <ul class="header-links">
+                    <li><span class="icon-red" aria-hidden="true">☎</span> <a href="tel:+60390013441">+60 3-9001 3441</a></li>
+                    <li><span class="icon-red" aria-hidden="true">✉</span> <a href="mailto:support@optikraft.my">support@optikraft.my</a></li>
+                    <li><span class="icon-red" aria-hidden="true">📍</span> <a href="https://maps.app.goo.gl/UQxLYgRSZ3BveFzy9" target="_blank" rel="noopener">UPNM Sungai Besi, KL</a></li>
+                </ul>
+                <ul class="header-links">
+                    <li id="accountItem"><span class="icon-red" aria-hidden="true">👤</span> <a id="accountLink" href="login.html">My Account</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div id="header">
+            <div class="container header-grid">
+                <div class="header-logo">
+                    <a href="index.html" class="logo" title="OptiKraft Cameras &amp; Parts Home">
+                        <img src="OptiKraft-Logo.jpeg" alt="OptiKraft Cameras &amp; Parts logo">
+                    </a>
+                </div>
+
+                <div class="header-search">
+                    <form action="products.html" method="get" role="search">
+                        <select class="input-select" name="cat" aria-label="Category">
+                            <option value="all">All Categories</option>
+                            <option value="cameras">Cameras</option>
+                            <option value="parts">OEM Parts</option>
+                            <option value="lenses">Lenses</option>
+                        </select>
+                        <input class="input" type="text" name="q" placeholder="Search cameras, sensors, shutters..." aria-label="Search products">
+                        <button type="submit" class="search-btn">Search</button>
+                    </form>
+                </div>
+
+                <div class="header-ctn">
+                    <div class="ctn-item">
+                        <a href="#" role="button" onclick="showWishlist(); return false;">
+                            <span class="ctn-icon" aria-hidden="true">♡</span>
+                            <span>Your Wishlist</span>
+                            <div class="qty" id="wishlistQtyBadge">0</div>
+                        </a>
+                    </div>
+
+                    <div class="ctn-item">
+                        <a href="cart.html" role="button" aria-haspopup="true">
+                            <span class="ctn-icon" aria-hidden="true">🛒</span>
+                            <span>Your Cart</span>
+                            <div class="qty" id="cartQtyBadge">0</div>
+                        </a>
+                        <div class="cart-dropdown" id="cartDropdown">
+                            <div class="cart-list" id="cartItemsList">
+                                <p class="cart-empty">Your cart is empty.</p>
+                            </div>
+                            <div class="cart-summary">
+                                <small id="cartSummaryCount">0 Item(s) selected</small>
+                                <h5 id="cartSubTotalText">SUBTOTAL: RM 0.00</h5>
+                            </div>
+                            <div class="cart-btns">
+                                <a href="cart.html">View Cart</a>
+                                <a href="checkout.html" class="checkout-link">Checkout</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="ctn-item menu-toggle">
+                        <a href="#" role="button" aria-controls="mainNav" onclick="toggleMobileMenu(); return false;">
+                            <span class="ctn-icon" aria-hidden="true">☰</span>
+                            <span>Menu</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <nav id="navigation" aria-label="Main">
+        <div class="container">
+            <ul class="main-nav" id="mainNav">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#hot-deal">Hot Deals</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="products.html">Cameras &amp; Parts</a></li>
+                <li><a href="products.html#services">Repair Services</a></li>
+                <li><a href="contact.html" class="active" aria-current="page">Contact</a></li>
+                <li data-guest-only><a href="login.html">Login</a></li>
+                <li data-guest-only><a href="signup.html">Sign Up</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main id="main" class="container section">
+        <div class="two-col-grid" style="align-items:start;">
+            <div>
+                <div class="card-box">
+                    <span class="eyebrow">Direct Engineering Support</span>
+                    <h1 class="page-h1">Contact OptiKraft Lab</h1>
+                    <p class="muted" style="margin-bottom:18px;">
+                        Need help identifying the right replacement part SKU or booking an urgent camera repair? Complete the form and our optical technicians will respond within 24 hours.
+                    </p>
+                    <p style="margin-bottom:8px;"><strong>📍 Studio Address:</strong> UPNM, Kem Perdana Sungai Besi, 57000 Kuala Lumpur</p>
+                    <p style="margin-bottom:8px;"><strong>☎ Hotline:</strong> +60 3-9001 3441 (Mon–Sat, 9AM–6PM)</p>
+                    <p style="margin-bottom:18px;"><strong>✉ Official Email:</strong> <a href="mailto:support@optikraft.my" class="red-link">support@optikraft.my</a></p>
+                    <a href="https://maps.app.goo.gl/UQxLYgRSZ3BveFzy9" target="_blank" rel="noopener" class="primary-btn">View Lab on Google Maps ↗</a>
+                </div>
+
+                <!-- Exercise 1: username, quantity, price, tax -->
+                <div class="card-box">
+                    <span class="eyebrow">Order Calculator</span>
+                    <h2 class="card-h" style="color:var(--electro-text);">Hardware Order Cost Estimator</h2>
+
+                    <form method="POST" action="handle_auth.php" onsubmit="return calcExercise1(event)">
+                        <input type="hidden" name="form_mode" value="gst_calc">
+
+                        <div class="form-group">
+                            <label for="calcUser">Username *</label>
+                            <input type="text" id="calcUser" name="username" class="form-control" placeholder="Enter username" autocomplete="username" required>
+                        </div>
+
+                        <div class="two-col-grid" style="gap:12px;">
+                            <div class="form-group">
+                                <label for="calcQty">Quantity *</label>
+                                <input type="number" id="calcQty" name="quantity" class="form-control" value="2" min="1" step="1" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="calcPrice">Unit Price (RM) *</label>
+                                <input type="number" id="calcPrice" name="price" class="form-control" value="420" min="0" step="0.01" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="calcGst">Tax (GST / SST) % *</label>
+                            <input type="number" id="calcGst" name="gst" class="form-control" value="6" min="0" max="100" step="0.1" required>
+                        </div>
+
+                        <button type="submit" class="primary-btn" style="width:100%;">Calculate Total Cost (including Tax)</button>
+                        <p id="gstResult" class="form-msg" role="status" aria-live="polite"></p>
+                    </form>
+                </div>
+            </div>
+
+            <!-- 4 & 7.5: Contact form -->
+            <div class="card-box">
+                <h2 class="card-h" style="color:var(--electro-text);">Contact &amp; Service Inquiry Form</h2>
+
+                <form id="contactForm" onsubmit="return validateContact(event)">
+                    <div class="form-group">
+                        <label for="contactPerson">Contact Person *</label>
+                        <input type="text" id="contactPerson" name="contactPerson" class="form-control upper-input" placeholder="Enter your full name" autocomplete="name" required>
+                    </div>
+
+                    <div class="two-col-grid" style="gap:15px;">
+                        <div class="form-group">
+                            <label for="email">Email Address *</label>
+                            <input type="email" id="email" name="email" class="form-control" placeholder="name@example.com" autocomplete="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone" class="form-control" placeholder="+6012-3456789" autocomplete="tel" pattern="[0-9 +\-]{8,15}" title="8 to 15 digits, e.g. +6012-3456789">
+                        </div>
+                    </div>
+
+                    <!-- Datalist -->
+                    <div class="form-group">
+                        <label for="cityInput">City</label>
+                        <input type="text" id="cityInput" name="city" list="cities" class="form-control" placeholder="Type or select a city..." autocomplete="address-level2">
+                        <datalist id="cities">
+                            <option>Kuala Lumpur</option>
+                            <option>Petaling Jaya</option>
+                            <option>Shah Alam</option>
+                            <option>Ipoh</option>
+                            <option>Johor Bahru</option>
+                            <option>George Town</option>
+                            <option>Singapore</option>
+                        </datalist>
+                    </div>
+
+                    <div class="two-col-grid" style="gap:15px;">
+                        <!-- Select with optgroup -->
+                        <div class="form-group">
+                            <label for="choices">Service Hub</label>
+                            <select id="choices" name="choices" class="form-control">
+                                <optgroup label="Malaysia Optical Labs">
+                                    <option value="Kuala Lumpur" selected>Kuala Lumpur Cleanroom</option>
+                                    <option value="Perak">Bota / Ipoh Service Hub</option>
+                                </optgroup>
+                                <optgroup label="Mail-in Service">
+                                    <option value="Singapore">Singapore</option>
+                                    <option value="Other">Other country</option>
+                                </optgroup>
+                            </select>
+                        </div>
+
+                        <!-- File upload -->
+                        <div class="form-group">
+                            <label for="damagePhoto">Attach Issue Photo</label>
+                            <input type="file" id="damagePhoto" name="damagePhoto" class="form-control" accept="image/*">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Message *</label>
+                        <textarea id="message" name="message" rows="4" class="form-control" placeholder="Tell us your camera model and describe the problem..." required></textarea>
+                    </div>
+
+                    <div style="display:flex; gap:10px; flex-wrap:wrap;">
+                        <input type="submit" name="Submit" value="Submit Inquiry" class="primary-btn">
+                        <input type="reset" name="reset" value="Reset" class="primary-btn btn-dark" onclick="document.getElementById('quoteOutput').textContent='';">
+                    </div>
+
+                    <p id="quoteOutput" class="form-msg" role="status" aria-live="polite"></p>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <footer id="footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer">
+                    <h3 class="footer-title">About Us</h3>
+                    <a href="index.html">
+                        <img src="OptiKraft-Logo.jpeg" alt="OptiKraft Cameras &amp; Parts logo" class="footer-logo-img">
+                    </a>
+                    <p style="margin-bottom:15px;">OptiKraft Technologies supplies flagship cameras, OEM replacement parts, and studio calibration services.</p>
+                    <ul class="footer-links">
+                        <li><a href="https://maps.app.goo.gl/UQxLYgRSZ3BveFzy9" target="_blank" rel="noopener">📍 Kem Perdana Sungai Besi, KL</a></li>
+                        <li><a href="tel:+60390013441">☎ +60 3-9001 3441</a></li>
+                        <li><a href="mailto:support@optikraft.my">✉ support@optikraft.my</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer">
+                    <h3 class="footer-title">Categories</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html#hot-deal">Hot deals</a></li>
+                        <li><a href="products.html?cat=cameras">Camera Bodies</a></li>
+                        <li><a href="products.html?cat=parts">OEM Spare Parts</a></li>
+                        <li><a href="products.html?cat=lenses">Prime Lenses</a></li>
+                        <li><a href="products.html#services">Repair Services</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer">
+                    <h3 class="footer-title">Information</h3>
+                    <ul class="footer-links">
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="OptiKraft_Catalog.pdf" download>Download Catalog (PDF)</a></li>
+                        <li><a href="https://www.leica-camera.com" target="_blank" rel="noopener">Partner: Leica Camera ↗</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer">
+                    <h3 class="footer-title">Service</h3>
+                    <ul class="footer-links">
+                        <li><a href="login.html">My Account</a></li>
+                        <li><a href="signup.html">Create Account</a></li>
+                        <li><a href="cart.html">View Cart</a></li>
+                        <li><a href="#top">↑ Back to Top</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div id="bottom-footer">
+            <div class="container">
+                <ul class="footer-payments" aria-label="Accepted payment methods">
+                    <li>VISA</li>
+                    <li>MASTERCARD</li>
+                    <li>FPX</li>
+                    <li>PAYPAL</li>
+                </ul>
+                <span class="copyright">
+                    Copyright &copy; 2026 OptiKraft Technologies. All rights reserved | Adapted from Electro Template for TSP 3243.
+                </span>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+    // Exercise 1: cost + tax calculator (runs in the browser unless USE_PHP_BACKEND is true in script.js)
+    function calcExercise1(event) {
+        if (usePhp()) return true;
+        event.preventDefault();
+
+        var user = document.getElementById("calcUser").value.trim();
+        var qty = parseFloat(document.getElementById("calcQty").value) || 0;
+        var price = parseFloat(document.getElementById("calcPrice").value) || 0;
+        var gst = parseFloat(document.getElementById("calcGst").value) || 0;
+
+        var subtotal = qty * price;
+        var taxAmount = subtotal * (gst / 100);
+        var totalCost = subtotal + taxAmount;
+
+        var out = document.getElementById("gstResult");
+        out.className = "form-msg msg-success";
+        out.textContent = "✔ Customer: " + user + " | Subtotal: RM " + subtotal.toFixed(2) +
+            " | Tax (" + gst + "%): RM " + taxAmount.toFixed(2) + " | Total Cost: RM " + totalCost.toFixed(2);
+        return false;
+    }
+
+    function validateContact(event) {
+        event.preventDefault();
+        var person = document.getElementById("contactPerson").value.trim();
+        var email = document.getElementById("email").value.trim();
+        var msg = document.getElementById("message").value.trim();
+        var out = document.getElementById("quoteOutput");
+
+        if (person === "" || email === "" || msg === "") {
+            out.className = "form-msg msg-error";
+            out.textContent = "⚠ Please fill in Contact Person, Email and Message.";
+            return false;
+        }
+
+        out.className = "form-msg msg-success";
+        out.textContent = "✔ Thank you, " + person + "! Your inquiry has been logged by OptiKraft Support.";
+        document.getElementById("contactForm").reset();
+        return false;
+    }
+    </script>
+</body>
+</html>

@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Create a free OptiKraft account.">
+    <title>Create Account (Sign Up) — OptiKraft</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/jpeg" href="OptiKraft-Logo.jpeg">
+    <script src="script.js" defer></script>
+</head>
+<body id="top">
+    <a class="skip-link" href="#main">Skip to main content</a>
+
+    <header>
+        <div id="top-header">
+            <div class="container top-header-flex">
+                <ul class="header-links">
+                    <li><span class="icon-red" aria-hidden="true">☎</span> <a href="tel:+60390013441">+60 3-9001 3441</a></li>
+                    <li><span class="icon-red" aria-hidden="true">✉</span> <a href="mailto:support@optikraft.my">support@optikraft.my</a></li>
+                    <li><span class="icon-red" aria-hidden="true">📍</span> <a href="https://maps.app.goo.gl/UQxLYgRSZ3BveFzy9" target="_blank" rel="noopener">UPNM Sungai Besi, KL</a></li>
+                </ul>
+                <ul class="header-links">
+                    <li id="accountItem"><span class="icon-red" aria-hidden="true">👤</span> <a id="accountLink" href="login.html">My Account</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div id="header">
+            <div class="container header-grid">
+                <div class="header-logo">
+                    <a href="index.html" class="logo" title="OptiKraft Cameras &amp; Parts Home">
+                        <img src="OptiKraft-Logo.jpeg" alt="OptiKraft Cameras &amp; Parts logo">
+                    </a>
+                </div>
+
+                <div class="header-search">
+                    <form action="products.html" method="get" role="search">
+                        <select class="input-select" name="cat" aria-label="Category">
+                            <option value="all">All Categories</option>
+                            <option value="cameras">Cameras</option>
+                            <option value="parts">OEM Parts</option>
+                            <option value="lenses">Lenses</option>
+                        </select>
+                        <input class="input" type="text" name="q" placeholder="Search cameras, sensors, shutters..." aria-label="Search products">
+                        <button type="submit" class="search-btn">Search</button>
+                    </form>
+                </div>
+
+                <div class="header-ctn">
+                    <div class="ctn-item">
+                        <a href="#" role="button" onclick="showWishlist(); return false;">
+                            <span class="ctn-icon" aria-hidden="true">♡</span>
+                            <span>Your Wishlist</span>
+                            <div class="qty" id="wishlistQtyBadge">0</div>
+                        </a>
+                    </div>
+
+                    <div class="ctn-item">
+                        <a href="cart.html" role="button" aria-haspopup="true">
+                            <span class="ctn-icon" aria-hidden="true">🛒</span>
+                            <span>Your Cart</span>
+                            <div class="qty" id="cartQtyBadge">0</div>
+                        </a>
+                        <div class="cart-dropdown" id="cartDropdown">
+                            <div class="cart-list" id="cartItemsList">
+                                <p class="cart-empty">Your cart is empty.</p>
+                            </div>
+                            <div class="cart-summary">
+                                <small id="cartSummaryCount">0 Item(s) selected</small>
+                                <h5 id="cartSubTotalText">SUBTOTAL: RM 0.00</h5>
+                            </div>
+                            <div class="cart-btns">
+                                <a href="cart.html">View Cart</a>
+                                <a href="checkout.html" class="checkout-link">Checkout</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="ctn-item menu-toggle">
+                        <a href="#" role="button" aria-controls="mainNav" onclick="toggleMobileMenu(); return false;">
+                            <span class="ctn-icon" aria-hidden="true">☰</span>
+                            <span>Menu</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <nav id="navigation" aria-label="Main">
+        <div class="container">
+            <ul class="main-nav" id="mainNav">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#hot-deal">Hot Deals</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="products.html">Cameras &amp; Parts</a></li>
+                <li><a href="products.html#services">Repair Services</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li data-guest-only><a href="login.html">Login</a></li>
+                <li data-guest-only><a href="signup.html" class="active" aria-current="page">Sign Up</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main id="main" class="container section">
+        <div class="card-box" style="max-width:680px; margin:0 auto;">
+            <span class="eyebrow">New Member Registration</span>
+            <h1 class="page-h1">Create Your OptiKraft Account</h1>
+
+            <form id="signupForm" method="POST" action="handle_auth.php" onsubmit="return validateSignupForm(event)">
+                <input type="hidden" name="recipient" value="registrations@optikraft.my">
+
+                <fieldset class="electro-fieldset">
+                    <legend>Personal Details</legend>
+
+                    <div class="two-col-grid" style="gap:15px;">
+                        <div class="form-group">
+                            <label for="fname">First name *</label>
+                            <input type="text" id="fname" name="fname" class="form-control" placeholder="e.g. Mohamad Ikmil" autocomplete="given-name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="lname">Last name *</label>
+                            <input type="text" id="lname" name="lname" class="form-control" placeholder="e.g. Harraz" autocomplete="family-name" required>
+                        </div>
+                    </div>
+
+                    <div class="two-col-grid" style="gap:15px;">
+                        <div class="form-group">
+                            <label for="email">Email address *</label>
+                            <input type="email" id="email" name="email" class="form-control" placeholder="name@example.com" autocomplete="email" required>
+                        </div>
+                        <!-- Pattern attribute: Malaysian 5-digit postcode -->
+                        <div class="form-group">
+                            <label for="postal">Postcode</label>
+                            <input type="text" id="postal" name="postal" class="form-control" placeholder="e.g. 57000" inputmode="numeric" pattern="[0-9]{5}" title="5-digit postcode, e.g. 57000" autocomplete="postal-code">
+                        </div>
+                    </div>
+
+                    <div class="two-col-grid" style="gap:15px;">
+                        <div class="form-group">
+                            <label for="pwd">Password *</label>
+                            <input type="password" id="pwd" name="pwd" class="form-control" placeholder="At least 8 characters" minlength="8" autocomplete="new-password" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="confirmPwd">Confirm password *</label>
+                            <input type="password" id="confirmPwd" name="confirmPwd" class="form-control" placeholder="Re-enter password" minlength="8" autocomplete="new-password" required>
+                        </div>
+                    </div>
+
+                    <div class="two-col-grid" style="gap:15px;">
+                        <div class="form-group">
+                            <label for="country">Country *</label>
+                            <select id="country" name="country" class="form-control" autocomplete="country-name" required>
+                                <option value="">Choose a country</option>
+                                <option value="Malaysia" selected>Malaysia</option>
+                                <option value="Singapore">Singapore</option>
+                                <option value="Thailand">Thailand</option>
+                                <option value="Indonesia">Indonesia</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="dob">Date of birth</label>
+                            <input type="date" id="dob" name="dob" class="form-control" autocomplete="bday">
+                        </div>
+                    </div>
+                </fieldset>
+
+                <!-- HTML5 input types -->
+                <fieldset class="electro-fieldset">
+                    <legend>Preferences</legend>
+
+                    <div class="two-col-grid" style="gap:15px;">
+                        <div class="form-group">
+                            <label for="favColor">Favourite rig accent colour</label>
+                            <input type="color" id="favColor" name="favColor" value="#D10024" class="form-control" style="height:40px; padding:4px;">
+                        </div>
+                        <div class="form-group">
+                            <label for="apptTime">Preferred lab appointment</label>
+                            <input type="datetime-local" id="apptTime" name="apptTime" class="form-control">
+                        </div>
+                    </div>
+
+                    <div class="two-col-grid" style="gap:15px;">
+                        <div class="form-group">
+                            <label for="warrMonth">Warranty start month</label>
+                            <input type="month" id="warrMonth" name="warrMonth" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="prefTime">Preferred pickup time</label>
+                            <input type="time" id="prefTime" name="prefTime" class="form-control">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="websiteUrl">Portfolio website (optional)</label>
+                        <input type="url" id="websiteUrl" name="website" class="form-control" placeholder="https://yourportfolio.com" autocomplete="url">
+                    </div>
+
+                    <fieldset class="choice-group">
+                        <legend>Gender *</legend>
+                        <div class="choice-row">
+                            <label class="check-label"><input type="radio" name="gender" value="male" checked required> Male</label>
+                            <label class="check-label"><input type="radio" name="gender" value="female"> Female</label>
+                            <label class="check-label"><input type="radio" name="gender" value="other"> Prefer not to say</label>
+                        </div>
+                    </fieldset>
+
+                    <fieldset class="choice-group">
+                        <legend>How did you hear about OptiKraft?</legend>
+                        <div class="choice-row">
+                            <label class="check-label"><input type="checkbox" name="source[]" value="Email"> Email</label>
+                            <label class="check-label"><input type="checkbox" name="source[]" value="Friend"> Friend</label>
+                            <label class="check-label"><input type="checkbox" name="source[]" value="Website" checked> Website</label>
+                        </div>
+                    </fieldset>
+                </fieldset>
+
+                <div style="display:flex; gap:10px;">
+                    <input type="submit" name="Submit" value="Create Account" class="primary-btn" style="flex:1;">
+                    <input type="reset" name="reset" value="Reset Form" class="primary-btn btn-dark">
+                </div>
+
+                <p id="signupMsg" class="form-msg" role="status" aria-live="polite"></p>
+            </form>
+
+            <p class="demo-note">Demo site: THIS IS DEMO - IKMIL</p>
+            <p class="card-foot">Already a member? <a href="login.html" class="red-link">Log in →</a></p>
+        </div>
+    </main>
+
+    <footer id="footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer">
+                    <h3 class="footer-title">About Us</h3>
+                    <a href="index.html">
+                        <img src="OptiKraft-Logo.jpeg" alt="OptiKraft Cameras &amp; Parts logo" class="footer-logo-img">
+                    </a>
+                    <p style="margin-bottom:15px;">OptiKraft Technologies supplies flagship cameras, OEM replacement parts, and studio calibration services.</p>
+                    <ul class="footer-links">
+                        <li><a href="https://maps.app.goo.gl/UQxLYgRSZ3BveFzy9" target="_blank" rel="noopener">📍 Kem Perdana Sungai Besi, KL</a></li>
+                        <li><a href="tel:+60390013441">☎ +60 3-9001 3441</a></li>
+                        <li><a href="mailto:support@optikraft.my">✉ support@optikraft.my</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer">
+                    <h3 class="footer-title">Categories</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html#hot-deal">Hot deals</a></li>
+                        <li><a href="products.html?cat=cameras">Camera Bodies</a></li>
+                        <li><a href="products.html?cat=parts">OEM Spare Parts</a></li>
+                        <li><a href="products.html?cat=lenses">Prime Lenses</a></li>
+                        <li><a href="products.html#services">Repair Services</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer">
+                    <h3 class="footer-title">Information</h3>
+                    <ul class="footer-links">
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="OptiKraft_Catalog.pdf" download>Download Catalog (PDF)</a></li>
+                        <li><a href="https://www.leica-camera.com" target="_blank" rel="noopener">Partner: Leica Camera ↗</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer">
+                    <h3 class="footer-title">Service</h3>
+                    <ul class="footer-links">
+                        <li><a href="login.html">My Account</a></li>
+                        <li><a href="signup.html">Create Account</a></li>
+                        <li><a href="cart.html">View Cart</a></li>
+                        <li><a href="#top">↑ Back to Top</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div id="bottom-footer">
+            <div class="container">
+                <ul class="footer-payments" aria-label="Accepted payment methods">
+                    <li>VISA</li>
+                    <li>MASTERCARD</li>
+                    <li>FPX</li>
+                    <li>PAYPAL</li>
+                </ul>
+                <span class="copyright">
+                    Copyright &copy; 2026 OptiKraft Technologies. All rights reserved | Adapted from Electro Template for TSP 3243.
+                </span>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+    document.getElementById("dob").max = new Date().toISOString().split("T")[0];   // no future birthdays
+
+    function validateSignupForm(event) {
+        if (usePhp()) return true;
+        event.preventDefault();
+
+        var fname = document.getElementById("fname").value.trim();
+        var lname = document.getElementById("lname").value.trim();
+        var email = document.getElementById("email").value.trim();
+        var pwd = document.getElementById("pwd").value;
+        var confirmPwd = document.getElementById("confirmPwd").value;
+        var msg = document.getElementById("signupMsg");
+        var nameRegex = /^[\p{L}\-' ]+$/u;          // letters, hyphen, apostrophe, space
+        var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+        function fail(text) {
+            msg.className = "form-msg msg-error";
+            msg.textContent = "⚠ " + text;
+            return false;
+        }
+
+        if (!nameRegex.test(fname) || !nameRegex.test(lname)) {
+            return fail("First and last name are required (letters and spaces only).");
+        }
+        if (!emailRegex.test(email)) {
+            return fail("Enter a valid email address.");
+        }
+        if (pwd.length < 8) {
+            return fail("Password must be at least 8 characters.");
+        }
+        if (pwd !== confirmPwd) {
+            return fail("The two passwords do not match.");
+        }
+
+        var result = registerUser(fname + " " + lname, email, pwd);
+        if (!result.ok) {
+            return fail(result.error);
+        }
+
+        msg.className = "form-msg msg-success";
+        msg.textContent = "✔ Registration complete for " + fname + " " + lname + "! Redirecting to log in...";
+        setTimeout(function () { window.location.href = "login.html"; }, 1400);
+        return false;
+    }
+    </script>
+</body>
+</html>

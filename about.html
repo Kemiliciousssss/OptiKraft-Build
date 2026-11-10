@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Meet the OptiKraft team and learn about our cleanroom camera repair services in Kuala Lumpur.">
+    <title>About Us &amp; Company Background — OptiKraft</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/jpeg" href="OptiKraft-Logo.jpeg">
+    <script src="script.js" defer></script>
+</head>
+<body id="top">
+    <a class="skip-link" href="#main">Skip to main content</a>
+
+    <header>
+        <div id="top-header">
+            <div class="container top-header-flex">
+                <ul class="header-links">
+                    <li><span class="icon-red" aria-hidden="true">☎</span> <a href="tel:+60390013441">+60 3-9001 3441</a></li>
+                    <li><span class="icon-red" aria-hidden="true">✉</span> <a href="mailto:support@optikraft.my">support@optikraft.my</a></li>
+                    <li><span class="icon-red" aria-hidden="true">📍</span> <a href="https://maps.app.goo.gl/UQxLYgRSZ3BveFzy9" target="_blank" rel="noopener">UPNM Sungai Besi, KL</a></li>
+                </ul>
+                <ul class="header-links">
+                    <li id="accountItem"><span class="icon-red" aria-hidden="true">👤</span> <a id="accountLink" href="login.html">My Account</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div id="header">
+            <div class="container header-grid">
+                <div class="header-logo">
+                    <a href="index.html" class="logo" title="OptiKraft Cameras &amp; Parts Home">
+                        <img src="OptiKraft-Logo.jpeg" alt="OptiKraft Cameras &amp; Parts logo">
+                    </a>
+                </div>
+
+                <div class="header-search">
+                    <form action="products.html" method="get" role="search">
+                        <select class="input-select" name="cat" aria-label="Category">
+                            <option value="all">All Categories</option>
+                            <option value="cameras">Cameras</option>
+                            <option value="parts">OEM Parts</option>
+                            <option value="lenses">Lenses</option>
+                        </select>
+                        <input class="input" type="text" name="q" placeholder="Search cameras, sensors, shutters..." aria-label="Search products">
+                        <button type="submit" class="search-btn">Search</button>
+                    </form>
+                </div>
+
+                <div class="header-ctn">
+                    <div class="ctn-item">
+                        <a href="#" role="button" onclick="showWishlist(); return false;">
+                            <span class="ctn-icon" aria-hidden="true">♡</span>
+                            <span>Your Wishlist</span>
+                            <div class="qty" id="wishlistQtyBadge">0</div>
+                        </a>
+                    </div>
+
+                    <div class="ctn-item">
+                        <a href="cart.html" role="button" aria-haspopup="true">
+                            <span class="ctn-icon" aria-hidden="true">🛒</span>
+                            <span>Your Cart</span>
+                            <div class="qty" id="cartQtyBadge">0</div>
+                        </a>
+                        <div class="cart-dropdown" id="cartDropdown">
+                            <div class="cart-list" id="cartItemsList">
+                                <p class="cart-empty">Your cart is empty.</p>
+                            </div>
+                            <div class="cart-summary">
+                                <small id="cartSummaryCount">0 Item(s) selected</small>
+                                <h5 id="cartSubTotalText">SUBTOTAL: RM 0.00</h5>
+                            </div>
+                            <div class="cart-btns">
+                                <a href="cart.html">View Cart</a>
+                                <a href="checkout.html" class="checkout-link">Checkout</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="ctn-item menu-toggle">
+                        <a href="#" role="button" aria-controls="mainNav" onclick="toggleMobileMenu(); return false;">
+                            <span class="ctn-icon" aria-hidden="true">☰</span>
+                            <span>Menu</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <nav id="navigation" aria-label="Main">
+        <div class="container">
+            <ul class="main-nav" id="mainNav">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#hot-deal">Hot Deals</a></li>
+                <li><a href="about.html" class="active" aria-current="page">About Us</a></li>
+                <li><a href="products.html">Cameras &amp; Parts</a></li>
+                <li><a href="products.html#services">Repair Services</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li data-guest-only><a href="login.html">Login</a></li>
+                <li data-guest-only><a href="signup.html">Sign Up</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main id="main" class="container section">
+        <!-- 7.1 & 7.2: Introduction and company profile picture -->
+        <div class="two-col-grid" style="align-items:center; margin-bottom:35px;">
+            <div class="card-box" style="margin-bottom:0;">
+                <span class="eyebrow">Company Portfolio</span>
+                <h1 class="page-h1">About OptiKraft Technologies</h1>
+                <p style="margin-bottom:14px;">
+                    <strong>OptiKraft Technologies</strong> was founded by two partners to supply flagship mirrorless cameras alongside genuine OEM internal replacement parts.
+                </p>
+                <p id="demo" class="muted" style="margin-bottom:16px;">
+                    Our Kuala Lumpur optical cleanroom provides laser sensor alignment, mechanical shutter replacement, and lens fungus removal.
+                </p>
+                <button type="button" class="primary-btn" onclick="document.getElementById('demo').textContent = '✔ Cleanroom service active in Kuala Lumpur. Same-day sensor cleaning is available.';">
+                    Check Cleanroom Service
+                </button>
+            </div>
+
+            <div class="card-box" style="padding:10px; margin-bottom:0;">
+                <img src="https://images.unsplash.com/photo-1581092335397-9583fe92d232?auto=format&amp;fit=crop&amp;w=900&amp;q=80" alt="OptiKraft optical diagnostic lab" width="900" height="600" loading="lazy">
+                <p class="caption">OptiKraft optical diagnostic lab</p>
+            </div>
+        </div>
+
+        <!-- Co-founders -->
+        <div class="section-title"><h2 class="title">Co-Founders &amp; Technical Skills</h2></div>
+        <div class="two-col-grid" style="margin-bottom:35px;">
+            <div class="card-box">
+                <span class="tag tag-red">Co-Founder &amp; Lead Systems Engineer</span>
+                <h3 class="person">Mohamad Ikmil Harraz</h3>
+                <p class="muted">Specializes in responsive full-stack web architecture, embedded camera firmware diagnostics, and CMOS sensor laser calibration.</p>
+            </div>
+            <div class="card-box">
+                <span class="tag tag-dark">Co-Founder &amp; Head of Optical Hardware</span>
+                <h3 class="person">Co-Founder Partner</h3>
+                <p class="muted">Directs high-speed shutter blade replacement, ultrasonic lens motor overhaul, and micro-soldering PCB repair.</p>
+            </div>
+        </div>
+
+        <!-- 7.3: Company background and nested lists -->
+        <div class="two-col-grid" style="margin-bottom:35px;">
+            <div class="card-box">
+                <h2 class="card-h">Company Background: Experience &amp; Services</h2>
+                <ul class="bullet-list">
+                    <li><strong>Current Experience (2026):</strong> Operating the responsive OptiKraft e-commerce platform with 150+ OEM camera parts in stock.</li>
+                    <li><strong>Past Experience (2025):</strong> Official studio maintenance provider for university media clubs and production houses.</li>
+                    <li><strong>Past Experience (2024):</strong> Completed 300+ shutter replacements and vintage lens restorations.</li>
+                    <li><strong>Core Services:</strong> Cleanroom sensor swabbing, shutter curtain overhaul, and ultrasonic lens calibration.</li>
+                </ul>
+            </div>
+
+            <div class="card-box">
+                <h2 class="card-h">OptiKraft Structure Outline</h2>
+                <ol class="nested-list">
+                    <li>Chapter 1: Optical Retail Division
+                        <ol type="A">
+                            <li>Introduction to OptiKraft</li>
+                            <li>What is Modular Camera Engineering</li>
+                        </ol>
+                    </li>
+                    <li>Chapter 2: Component Hardware Catalog
+                        <ol type="a">
+                            <li>Introduction to OEM Parts</li>
+                            <li>Basic Camera Assemblies
+                                <ul>
+                                    <li>Head Section (Prism &amp; EVF)</li>
+                                    <li>Body Section (Magnesium Chassis)</li>
+                                    <li>Image Sensor (35mm CMOS)</li>
+                                    <li>Links &amp; Ribbon Flex Cables</li>
+                                    <li>Ordered Lists and Unordered Lists of SKUs</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </li>
+                    <li>Chapter 3: Cleanroom Calibration
+                        <ol type="i">
+                            <li>Introduction to Laser Alignment</li>
+                            <li>Cascading Style Sheets (CSS) &amp; UI Diagnostics</li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+        </div>
+
+        <!-- HTML5 multimedia (<audio> and <video>) -->
+        <div class="card-box two-col-grid" style="align-items:center;">
+            <div>
+                <h2 class="card-h">Hear &amp; See Our Lab</h2>
+                <p class="muted" style="margin-bottom:14px;">
+                    Listen to our mechanical shutter actuation acoustic test, or watch our cleanroom optical calibration overview.
+                </p>
+                <p class="media-label" id="audioLabel">Audio: shutter actuation test</p>
+                <audio controls preload="none" aria-labelledby="audioLabel" style="width:100%;">
+                    <source src="audio/audio.mp3" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio>
+            </div>
+            <div>
+                <p class="media-label" id="videoLabel">Video: calibration preview</p>
+                <video controls preload="none" aria-labelledby="videoLabel" poster="Which Canon Video Camera Is Right For You_ _ Faye van Hest tests the Full V-Series + the EOS R6 Vauto=format&amp;fit=crop&amp;w=700&amp;q=80" class="video-box">
+                    <source src="video/calibration.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+        </div>
+    </main>
+
+    <footer id="footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer">
+                    <h3 class="footer-title">About Us</h3>
+                    <a href="index.html">
+                        <img src="OptiKraft-Logo.jpeg" alt="OptiKraft Cameras &amp; Parts logo" class="footer-logo-img">
+                    </a>
+                    <p style="margin-bottom:15px;">OptiKraft Technologies supplies flagship cameras, OEM replacement parts, and studio calibration services.</p>
+                    <ul class="footer-links">
+                        <li><a href="https://maps.app.goo.gl/UQxLYgRSZ3BveFzy9" target="_blank" rel="noopener">📍 Kem Perdana Sungai Besi, KL</a></li>
+                        <li><a href="tel:+60390013441">☎ +60 3-9001 3441</a></li>
+                        <li><a href="mailto:support@optikraft.my">✉ support@optikraft.my</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer">
+                    <h3 class="footer-title">Categories</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html#hot-deal">Hot deals</a></li>
+                        <li><a href="products.html?cat=cameras">Camera Bodies</a></li>
+                        <li><a href="products.html?cat=parts">OEM Spare Parts</a></li>
+                        <li><a href="products.html?cat=lenses">Prime Lenses</a></li>
+                        <li><a href="products.html#services">Repair Services</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer">
+                    <h3 class="footer-title">Information</h3>
+                    <ul class="footer-links">
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="OptiKraft_Catalog.pdf" download>Download Catalog (PDF)</a></li>
+                        <li><a href="https://www.leica-camera.com" target="_blank" rel="noopener">Partner: Leica Camera ↗</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer">
+                    <h3 class="footer-title">Service</h3>
+                    <ul class="footer-links">
+                        <li><a href="login.html">My Account</a></li>
+                        <li><a href="signup.html">Create Account</a></li>
+                        <li><a href="cart.html">View Cart</a></li>
+                        <li><a href="#top">↑ Back to Top</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div id="bottom-footer">
+            <div class="container">
+                <ul class="footer-payments" aria-label="Accepted payment methods">
+                    <li>VISA</li>
+                    <li>MASTERCARD</li>
+                    <li>FPX</li>
+                    <li>PAYPAL</li>
+                </ul>
+                <span class="copyright">
+                    Copyright &copy; 2026 OptiKraft Technologies. All rights reserved | Adapted from Electro Template for TSP 3243.
+                </span>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

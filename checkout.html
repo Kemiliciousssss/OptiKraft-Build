@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Enter your details and place your OptiKraft order.">
+    <title>Checkout — OptiKraft</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/jpeg" href="OptiKraft-Logo.jpeg">
+    <script src="script.js" defer></script>
+</head>
+<body id="top">
+    <a class="skip-link" href="#main">Skip to main content</a>
+
+    <header>
+        <div id="top-header">
+            <div class="container top-header-flex">
+                <ul class="header-links">
+                    <li><span class="icon-red" aria-hidden="true">☎</span> <a href="tel:+60390013441">+60 3-9001 3441</a></li>
+                    <li><span class="icon-red" aria-hidden="true">✉</span> <a href="mailto:support@optikraft.my">support@optikraft.my</a></li>
+                    <li><span class="icon-red" aria-hidden="true">📍</span> <a href="https://maps.app.goo.gl/UQxLYgRSZ3BveFzy9" target="_blank" rel="noopener">UPNM Sungai Besi, KL</a></li>
+                </ul>
+                <ul class="header-links">
+                    <li id="accountItem"><span class="icon-red" aria-hidden="true">👤</span> <a id="accountLink" href="login.html">My Account</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div id="header">
+            <div class="container header-grid">
+                <div class="header-logo">
+                    <a href="index.html" class="logo" title="OptiKraft Cameras &amp; Parts Home">
+                        <img src="OptiKraft-Logo.jpeg" alt="OptiKraft Cameras &amp; Parts logo">
+                    </a>
+                </div>
+
+                <div class="header-search">
+                    <form action="products.html" method="get" role="search">
+                        <select class="input-select" name="cat" aria-label="Category">
+                            <option value="all">All Categories</option>
+                            <option value="cameras">Cameras</option>
+                            <option value="parts">OEM Parts</option>
+                            <option value="lenses">Lenses</option>
+                        </select>
+                        <input class="input" type="text" name="q" placeholder="Search cameras, sensors, shutters..." aria-label="Search products">
+                        <button type="submit" class="search-btn">Search</button>
+                    </form>
+                </div>
+
+                <div class="header-ctn">
+                    <div class="ctn-item">
+                        <a href="#" role="button" onclick="showWishlist(); return false;">
+                            <span class="ctn-icon" aria-hidden="true">♡</span>
+                            <span>Your Wishlist</span>
+                            <div class="qty" id="wishlistQtyBadge">0</div>
+                        </a>
+                    </div>
+
+                    <div class="ctn-item">
+                        <a href="cart.html" role="button" aria-haspopup="true">
+                            <span class="ctn-icon" aria-hidden="true">🛒</span>
+                            <span>Your Cart</span>
+                            <div class="qty" id="cartQtyBadge">0</div>
+                        </a>
+                        <div class="cart-dropdown" id="cartDropdown">
+                            <div class="cart-list" id="cartItemsList">
+                                <p class="cart-empty">Your cart is empty.</p>
+                            </div>
+                            <div class="cart-summary">
+                                <small id="cartSummaryCount">0 Item(s) selected</small>
+                                <h5 id="cartSubTotalText">SUBTOTAL: RM 0.00</h5>
+                            </div>
+                            <div class="cart-btns">
+                                <a href="cart.html">View Cart</a>
+                                <a href="checkout.html" class="checkout-link">Checkout</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="ctn-item menu-toggle">
+                        <a href="#" role="button" aria-controls="mainNav" onclick="toggleMobileMenu(); return false;">
+                            <span class="ctn-icon" aria-hidden="true">☰</span>
+                            <span>Menu</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <nav id="navigation" aria-label="Main">
+        <div class="container">
+            <ul class="main-nav" id="mainNav">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#hot-deal">Hot Deals</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="products.html">Cameras &amp; Parts</a></li>
+                <li><a href="products.html#services">Repair Services</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li data-guest-only><a href="login.html">Login</a></li>
+                <li data-guest-only><a href="signup.html">Sign Up</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main id="main" class="section">
+        <div class="container">
+            <div class="section-title">
+                <h1 class="page-title">Checkout</h1>
+                <a href="cart.html" class="btn-outline">&larr; Back to Cart</a>
+            </div>
+
+            <!-- Empty cart -->
+            <div id="checkoutEmpty" class="card-box empty-state" style="display:none;">
+                <h2>Nothing to check out</h2>
+                <p style="color:var(--electro-muted); margin:10px 0 22px;">Your cart is empty. Add some items first.</p>
+                <a href="products.html" class="primary-btn">Browse Cameras &amp; Parts</a>
+            </div>
+
+            <!-- Order confirmation (shown after placing the order) -->
+            <div id="orderSuccess" class="card-box order-success" style="display:none;">
+                <h2 style="color:var(--electro-red);">Thank you for your order!</h2>
+                <p style="color:var(--electro-muted); margin-top:8px;">Keep your order number for reference.</p>
+                <ul class="order-details">
+                    <li><strong>Order number:</strong> <span id="orderId"></span></li>
+                    <li><strong>Name:</strong> <span id="orderName"></span></li>
+                    <li><strong>Email:</strong> <span id="orderEmail"></span></li>
+                    <li><strong>Payment method:</strong> <span id="orderMethod"></span></li>
+                    <li><strong>Total:</strong> <span id="orderTotal"></span></li>
+                </ul>
+                <div><a href="index.html" class="primary-btn">Back to Home</a></div>
+            </div>
+
+            <!-- Checkout form + summary -->
+            <div id="checkoutContent" class="checkout-layout" style="display:none;">
+                <form id="checkoutForm" onsubmit="return placeOrder(event);">
+                    <fieldset class="electro-fieldset">
+                        <legend>1. Contact Details</legend>
+                        <div class="form-group">
+                            <label for="fullName">Full Name</label>
+                            <input class="form-control" type="text" id="fullName" name="fullName" autocomplete="name" required>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input class="form-control" type="email" id="email" name="email" autocomplete="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Phone</label>
+                                <input class="form-control" type="tel" id="phone" name="phone" autocomplete="tel" pattern="[0-9 +\-]{8,15}" title="8 to 15 digits, e.g. +60 12-345 6789" required>
+                            </div>
+                        </div>
+                    </fieldset>
+
+                    <fieldset class="electro-fieldset">
+                        <legend>2. Shipping Address</legend>
+                        <div class="form-group">
+                            <label for="address">Street Address</label>
+                            <input class="form-control" type="text" id="address" name="address" autocomplete="street-address" required>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="city">City</label>
+                                <input class="form-control" type="text" id="city" name="city" autocomplete="address-level2" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="postcode">Postcode</label>
+                                <input class="form-control" type="text" id="postcode" name="postcode" inputmode="numeric" pattern="[0-9]{5}" title="5-digit postcode" autocomplete="postal-code" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="state">State</label>
+                            <select class="form-control" id="state" name="state" autocomplete="address-level1" required>
+                                <option value="">Select a state</option>
+                                <option value="Johor">Johor</option>
+                                <option value="Kedah">Kedah</option>
+                                <option value="Kelantan">Kelantan</option>
+                                <option value="Melaka">Melaka</option>
+                                <option value="Negeri Sembilan">Negeri Sembilan</option>
+                                <option value="Pahang">Pahang</option>
+                                <option value="Perak">Perak</option>
+                                <option value="Perlis">Perlis</option>
+                                <option value="Pulau Pinang">Pulau Pinang</option>
+                                <option value="Sabah">Sabah</option>
+                                <option value="Sarawak">Sarawak</option>
+                                <option value="Selangor">Selangor</option>
+                                <option value="Terengganu">Terengganu</option>
+                                <option value="W.P. Kuala Lumpur">W.P. Kuala Lumpur</option>
+                                <option value="W.P. Labuan">W.P. Labuan</option>
+                                <option value="W.P. Putrajaya">W.P. Putrajaya</option>
+                            </select>
+                        </div>
+                    </fieldset>
+
+                    <fieldset class="electro-fieldset">
+                        <legend>3. Payment Method</legend>
+                        <label class="payment-option"><input type="radio" name="payment" value="FPX Online Banking" checked> FPX Online Banking</label>
+                        <label class="payment-option"><input type="radio" name="payment" value="Credit / Debit Card"> Credit / Debit Card</label>
+                        <label class="payment-option"><input type="radio" name="payment" value="PayPal"> PayPal</label>
+                        <label class="payment-option"><input type="radio" name="payment" value="Cash on Delivery"> Cash on Delivery</label>
+                        <p class="demo-note">Demo store: no payment is processed and no card details are collected.</p>
+                    </fieldset>
+
+                    <button type="submit" class="primary-btn" style="width:100%;">Place Order</button>
+                </form>
+
+                <aside class="card-box summary-card">
+                    <h2 class="summary-title">Your Order</h2>
+                    <div id="checkoutItems"></div>
+                    <div class="summary-row"><span>Subtotal</span><strong id="coSubtotal">RM 0.00</strong></div>
+                    <div class="summary-row"><span>Shipping</span><strong id="coShipping">RM 0.00</strong></div>
+                    <div class="summary-row total"><span>Total</span><span id="coTotal">RM 0.00</span></div>
+                    <p class="summary-hint" id="coHint"></p>
+                    <p class="demo-note">Prices are shown in MYR.</p>
+                </aside>
+            </div>
+        </div>
+    </main>
+
+    <footer id="footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer">
+                    <h3 class="footer-title">About Us</h3>
+                    <a href="index.html">
+                        <img src="OptiKraft-Logo.jpeg" alt="OptiKraft Cameras &amp; Parts logo" class="footer-logo-img">
+                    </a>
+                    <p style="margin-bottom:15px;">OptiKraft Technologies supplies flagship cameras, OEM replacement parts, and studio calibration services.</p>
+                    <ul class="footer-links">
+                        <li><a href="https://maps.app.goo.gl/UQxLYgRSZ3BveFzy9" target="_blank" rel="noopener">📍 Kem Perdana Sungai Besi, KL</a></li>
+                        <li><a href="tel:+60390013441">☎ +60 3-9001 3441</a></li>
+                        <li><a href="mailto:support@optikraft.my">✉ support@optikraft.my</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer">
+                    <h3 class="footer-title">Categories</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html#hot-deal">Hot deals</a></li>
+                        <li><a href="products.html?cat=cameras">Camera Bodies</a></li>
+                        <li><a href="products.html?cat=parts">OEM Spare Parts</a></li>
+                        <li><a href="products.html?cat=lenses">Prime Lenses</a></li>
+                        <li><a href="products.html#services">Repair Services</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer">
+                    <h3 class="footer-title">Information</h3>
+                    <ul class="footer-links">
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="OptiKraft_Catalog.pdf" download>Download Catalog (PDF)</a></li>
+                        <li><a href="https://www.leica-camera.com" target="_blank" rel="noopener">Partner: Leica Camera ↗</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer">
+                    <h3 class="footer-title">Service</h3>
+                    <ul class="footer-links">
+                        <li><a href="login.html">My Account</a></li>
+                        <li><a href="signup.html">Create Account</a></li>
+                        <li><a href="cart.html">View Cart</a></li>
+                        <li><a href="#top">↑ Back to Top</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div id="bottom-footer">
+            <div class="container">
+                <ul class="footer-payments" aria-label="Accepted payment methods">
+                    <li>VISA</li>
+                    <li>MASTERCARD</li>
+                    <li>FPX</li>
+                    <li>PAYPAL</li>
+                </ul>
+                <span class="copyright">
+                    Copyright &copy; 2026 OptiKraft Technologies. All rights reserved | Adapted from Electro Template for TSP 3243.
+                </span>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
