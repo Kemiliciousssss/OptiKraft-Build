@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="style.css">
     <link rel="icon" type="image/jpeg" href="OptiKraft-Logo.jpeg">
     <script src="script.js" defer></script>
-    <!-- 4: Internal CSS demonstration (<style> inside <head>) -->
     <style>
         .catalog-filter-bar {
             display: flex;
@@ -72,7 +71,7 @@
 
                 <div class="header-ctn">
                     <div class="ctn-item">
-                        <a href="#" role="button" onclick="showWishlist(); return false;">
+                        <a href="wishlist.html">
                             <span class="ctn-icon" aria-hidden="true">♡</span>
                             <span>Your Wishlist</span>
                             <div class="qty" id="wishlistQtyBadge">0</div>
@@ -132,159 +131,156 @@
                 <strong style="text-transform:uppercase;">Official OptiKraft Storefront Catalog</strong>
                 <span class="muted" style="margin-left:10px;">Showing genuine cameras &amp; replacement components</span>
             </div>
-            <!-- 5.2: Downloadable file link -->
             <a href="OptiKraft_Catalog.pdf" download class="primary-btn btn-sm">Download Full Catalog (PDF) ↓</a>
         </div>
 
         <div class="products-grid" id="catalogGrid">
-                    <div class="product" data-cat="cameras">
-                        <div class="product-img">
-                            <img src="https://images.unsplash.com/photo-1502920917128-1aa500764cbd?auto=format&amp;fit=crop&amp;w=600&amp;q=80" alt="OptiKraft X1 Mirrorless Body" width="300" height="300" loading="lazy">
-                            <div class="product-label"><span class="sale">-15%</span><span class="new">FLAGSHIP</span></div>
-                            <div class="add-to-cart">
-                                <button type="button" class="add-to-cart-btn" onclick="addToCart('OptiKraft X1 Mirrorless Body', 6499, 'https://images.unsplash.com/photo-1502920917128-1aa500764cbd?auto=format&amp;fit=crop&amp;w=200&amp;q=80')">🛒 add to cart</button>
-                            </div>
-                        </div>
-                        <div class="product-body">
-                            <p class="product-category">Cameras</p>
-                            <h3 class="product-name">OptiKraft X1 Mirrorless Body</h3>
-                            <h4 class="product-price js-price" data-myr="6499" data-old-myr="7650">RM 6,499.00 <del class="product-old-price">RM 7,650.00</del></h4>
-                            <div class="product-rating" aria-label="5 out of 5 stars">★★★★★</div>
-                            <div class="product-btns">
-                                <button type="button" onclick="addToWishlist('OptiKraft X1 Mirrorless Body')" title="Add to wishlist" aria-label="Add OptiKraft X1 Mirrorless Body to wishlist">♡</button>
-                            </div>
-                        </div>
+            <div class="product" data-cat="cameras">
+                <div class="product-img">
+                    <img src="https://images.unsplash.com/photo-1502920917128-1aa500764cbd?auto=format&amp;fit=crop&amp;w=600&amp;q=80" alt="OptiKraft X1 Mirrorless Body" width="300" height="300" loading="lazy">
+                    <div class="product-label"><span class="sale">-15%</span><span class="new">FLAGSHIP</span></div>
+                    <div class="add-to-cart">
+                        <button type="button" class="add-to-cart-btn" onclick="addToCart('OptiKraft X1 Mirrorless Body', 6499, 'https://images.unsplash.com/photo-1502920917128-1aa500764cbd?auto=format&amp;fit=crop&amp;w=200&amp;q=80')">🛒 add to cart</button>
                     </div>
-                    <div class="product" data-cat="cameras">
-                        <div class="product-img">
-                            <img src="https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&amp;fit=crop&amp;w=600&amp;q=80" alt="OptiKraft Pro Cinema Rig" width="300" height="300" loading="lazy">
-                            <div class="product-label"><span class="sale">-13%</span></div>
-                            <div class="add-to-cart">
-                                <button type="button" class="add-to-cart-btn" onclick="addToCart('OptiKraft Pro Cinema Rig', 7850, 'https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&amp;fit=crop&amp;w=200&amp;q=80')">🛒 add to cart</button>
-                            </div>
-                        </div>
-                        <div class="product-body">
-                            <p class="product-category">Cameras</p>
-                            <h3 class="product-name">OptiKraft Pro Cinema Rig</h3>
-                            <h4 class="product-price js-price" data-myr="7850" data-old-myr="8999">RM 7,850.00 <del class="product-old-price">RM 8,999.00</del></h4>
-                            <div class="product-rating" aria-label="5 out of 5 stars">★★★★★</div>
-                            <div class="product-btns">
-                                <button type="button" onclick="addToWishlist('OptiKraft Pro Cinema Rig')" title="Add to wishlist" aria-label="Add OptiKraft Pro Cinema Rig to wishlist">♡</button>
-                            </div>
-                        </div>
+                </div>
+                <div class="product-body">
+                    <p class="product-category">Cameras</p>
+                    <h3 class="product-name">OptiKraft X1 Mirrorless Body</h3>
+                    <h4 class="product-price js-price" data-myr="6499" data-old-myr="7650">RM 6,499.00 <del class="product-old-price">RM 7,650.00</del></h4>
+                    <div class="product-rating" aria-label="5 out of 5 stars">★★★★★</div>
+                    <div class="product-btns">
+                        <button type="button" onclick="addToWishlist('OptiKraft X1 Mirrorless Body')" title="Add to wishlist" aria-label="Add OptiKraft X1 Mirrorless Body to wishlist">♡</button>
                     </div>
-                    <div class="product" data-cat="parts">
-                        <div class="product-img">
-                            <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&amp;fit=crop&amp;w=600&amp;q=80" alt="MK-IV 35mm CMOS Sensor Unit" width="300" height="300" loading="lazy">
-                            <div class="product-label"><span class="sale">-14%</span><span class="new">OEM PART</span></div>
-                            <div class="add-to-cart">
-                                <button type="button" class="add-to-cart-btn" onclick="addToCart('MK-IV 35mm CMOS Sensor Unit', 1450, 'https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&amp;fit=crop&amp;w=200&amp;q=80')">🛒 add to cart</button>
-                            </div>
-                        </div>
-                        <div class="product-body">
-                            <p class="product-category">OEM Parts</p>
-                            <h3 class="product-name">MK-IV 35mm CMOS Sensor Unit</h3>
-                            <h4 class="product-price js-price" data-myr="1450" data-old-myr="1690">RM 1,450.00 <del class="product-old-price">RM 1,690.00</del></h4>
-                            <div class="product-rating" aria-label="5 out of 5 stars">★★★★★</div>
-                            <div class="product-btns">
-                                <button type="button" onclick="addToWishlist('MK-IV 35mm CMOS Sensor Unit')" title="Add to wishlist" aria-label="Add MK-IV 35mm CMOS Sensor Unit to wishlist">♡</button>
-                            </div>
-                        </div>
+                </div>
+            </div>
+            <div class="product" data-cat="cameras">
+                <div class="product-img">
+                    <img src="https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&amp;fit=crop&amp;w=600&amp;q=80" alt="OptiKraft Pro Cinema Rig" width="300" height="300" loading="lazy">
+                    <div class="product-label"><span class="sale">-13%</span></div>
+                    <div class="add-to-cart">
+                        <button type="button" class="add-to-cart-btn" onclick="addToCart('OptiKraft Pro Cinema Rig', 7850, 'https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&amp;fit=crop&amp;w=200&amp;q=80')">🛒 add to cart</button>
                     </div>
-                    <div class="product" data-cat="parts">
-                        <div class="product-img">
-                            <img src="https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?auto=format&amp;fit=crop&amp;w=600&amp;q=80" alt="Carbon Shutter Blade Unit" width="300" height="300" loading="lazy">
-                            <div class="product-label"><span class="sale">-24%</span><span class="new">IN STOCK</span></div>
-                            <div class="add-to-cart">
-                                <button type="button" class="add-to-cart-btn" onclick="addToCart('Carbon Shutter Blade Unit', 420, 'https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?auto=format&amp;fit=crop&amp;w=200&amp;q=80')">🛒 add to cart</button>
-                            </div>
-                        </div>
-                        <div class="product-body">
-                            <p class="product-category">OEM Parts</p>
-                            <h3 class="product-name">Carbon Shutter Blade Unit</h3>
-                            <h4 class="product-price js-price" data-myr="420" data-old-myr="550">RM 420.00 <del class="product-old-price">RM 550.00</del></h4>
-                            <div class="product-rating" aria-label="5 out of 5 stars">★★★★★</div>
-                            <div class="product-btns">
-                                <button type="button" onclick="addToWishlist('Carbon Shutter Blade Unit')" title="Add to wishlist" aria-label="Add Carbon Shutter Blade Unit to wishlist">♡</button>
-                            </div>
-                        </div>
+                </div>
+                <div class="product-body">
+                    <p class="product-category">Cameras</p>
+                    <h3 class="product-name">OptiKraft Pro Cinema Rig</h3>
+                    <h4 class="product-price js-price" data-myr="7850" data-old-myr="8999">RM 7,850.00 <del class="product-old-price">RM 8,999.00</del></h4>
+                    <div class="product-rating" aria-label="5 out of 5 stars">★★★★★</div>
+                    <div class="product-btns">
+                        <button type="button" onclick="addToWishlist('OptiKraft Pro Cinema Rig')" title="Add to wishlist" aria-label="Add OptiKraft Pro Cinema Rig to wishlist">♡</button>
                     </div>
-                    <div class="product" data-cat="parts">
-                        <div class="product-img">
-                            <img src="https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?auto=format&amp;fit=crop&amp;w=600&amp;q=80" alt="CNC Titanium E-Mount Bayonet Ring" width="300" height="300" loading="lazy">
-                            <div class="product-label"><span class="sale">-25%</span></div>
-                            <div class="add-to-cart">
-                                <button type="button" class="add-to-cart-btn" onclick="addToCart('CNC Titanium E-Mount Bayonet Ring', 195, 'https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?auto=format&amp;fit=crop&amp;w=200&amp;q=80')">🛒 add to cart</button>
-                            </div>
-                        </div>
-                        <div class="product-body">
-                            <p class="product-category">OEM Parts</p>
-                            <h3 class="product-name">CNC Titanium E-Mount Bayonet Ring</h3>
-                            <h4 class="product-price js-price" data-myr="195" data-old-myr="260">RM 195.00 <del class="product-old-price">RM 260.00</del></h4>
-                            <div class="product-rating" aria-label="5 out of 5 stars">★★★★★</div>
-                            <div class="product-btns">
-                                <button type="button" onclick="addToWishlist('CNC Titanium E-Mount Bayonet Ring')" title="Add to wishlist" aria-label="Add CNC Titanium E-Mount Bayonet Ring to wishlist">♡</button>
-                            </div>
-                        </div>
+                </div>
+            </div>
+            <div class="product" data-cat="parts">
+                <div class="product-img">
+                    <img src="https://i.ebayimg.com/images/g/ep8AAOSwtEZdDGCz/s-l1200.jpg" alt="MK-IV 35mm CMOS Sensor Unit" width="300" height="300" loading="lazy">
+                    <div class="product-label"><span class="sale">-14%</span><span class="new">OEM PART</span></div>
+                    <div class="add-to-cart">
+                        <button type="button" class="add-to-cart-btn" onclick="addToCart('MK-IV 35mm CMOS Sensor Unit', 1450, 'https://i.ebayimg.com/images/g/ep8AAOSwtEZdDGCz/s-l1200.jpg')">🛒 add to cart</button>
                     </div>
-                    <div class="product" data-cat="parts">
-                        <div class="product-img">
-                            <img src="https://images.unsplash.com/photo-1581092335397-9583fe92d232?auto=format&amp;fit=crop&amp;w=600&amp;q=80" alt="Mainboard LCD Flex Ribbon Cable" width="300" height="300" loading="lazy">
-                            
-                            <div class="add-to-cart">
-                                <button type="button" class="add-to-cart-btn" onclick="addToCart('Mainboard LCD Flex Ribbon Cable', 140, 'https://images.unsplash.com/photo-1581092335397-9583fe92d232?auto=format&amp;fit=crop&amp;w=200&amp;q=80')">🛒 add to cart</button>
-                            </div>
-                        </div>
-                        <div class="product-body">
-                            <p class="product-category">OEM Parts</p>
-                            <h3 class="product-name">Mainboard LCD Flex Ribbon Cable</h3>
-                            <h4 class="product-price js-price" data-myr="140">RM 140.00</h4>
-                            <div class="product-rating" aria-label="5 out of 5 stars">★★★★★</div>
-                            <div class="product-btns">
-                                <button type="button" onclick="addToWishlist('Mainboard LCD Flex Ribbon Cable')" title="Add to wishlist" aria-label="Add Mainboard LCD Flex Ribbon Cable to wishlist">♡</button>
-                            </div>
-                        </div>
+                </div>
+                <div class="product-body">
+                    <p class="product-category">OEM Parts</p>
+                    <h3 class="product-name">MK-IV 35mm CMOS Sensor Unit</h3>
+                    <h4 class="product-price js-price" data-myr="1450" data-old-myr="1690">RM 1,450.00 <del class="product-old-price">RM 1,690.00</del></h4>
+                    <div class="product-rating" aria-label="5 out of 5 stars">★★★★★</div>
+                    <div class="product-btns">
+                        <button type="button" onclick="addToWishlist('MK-IV 35mm CMOS Sensor Unit')" title="Add to wishlist" aria-label="Add MK-IV 35mm CMOS Sensor Unit to wishlist">♡</button>
                     </div>
-                    <div class="product" data-cat="lenses">
-                        <div class="product-img">
-                            <img src="https://images.unsplash.com/photo-1617005082133-548c4dd27f35?auto=format&amp;fit=crop&amp;w=600&amp;q=80" alt="KraftGlass 50mm f/1.2 Prime" width="300" height="300" loading="lazy">
-                            <div class="product-label"><span class="sale">-22%</span></div>
-                            <div class="add-to-cart">
-                                <button type="button" class="add-to-cart-btn" onclick="addToCart('KraftGlass 50mm f/1.2 Prime', 3290, 'https://images.unsplash.com/photo-1617005082133-548c4dd27f35?auto=format&amp;fit=crop&amp;w=200&amp;q=80')">🛒 add to cart</button>
-                            </div>
-                        </div>
-                        <div class="product-body">
-                            <p class="product-category">Lenses &amp; Rigs</p>
-                            <h3 class="product-name">KraftGlass 50mm f/1.2 Prime</h3>
-                            <h4 class="product-price js-price" data-myr="3290" data-old-myr="4200">RM 3,290.00 <del class="product-old-price">RM 4,200.00</del></h4>
-                            <div class="product-rating" aria-label="5 out of 5 stars">★★★★★</div>
-                            <div class="product-btns">
-                                <button type="button" onclick="addToWishlist('KraftGlass 50mm f/1.2 Prime')" title="Add to wishlist" aria-label="Add KraftGlass 50mm f/1.2 Prime to wishlist">♡</button>
-                            </div>
-                        </div>
+                </div>
+            </div>
+            <div class="product" data-cat="parts">
+                <div class="product-img">
+                    <img src="https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?auto=format&amp;fit=crop&amp;w=600&amp;q=80" alt="Carbon Shutter Blade Unit" width="300" height="300" loading="lazy">
+                    <div class="product-label"><span class="sale">-24%</span><span class="new">IN STOCK</span></div>
+                    <div class="add-to-cart">
+                        <button type="button" class="add-to-cart-btn" onclick="addToCart('Carbon Shutter Blade Unit', 420, 'https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?auto=format&amp;fit=crop&amp;w=200&amp;q=80')">🛒 add to cart</button>
                     </div>
-                    <div class="product" data-cat="lenses">
-                        <div class="product-img">
-                            <img src="https://images.unsplash.com/photo-1617005082133-548c4dd27f35?auto=format&amp;fit=crop&amp;w=600&amp;q=80" alt="KraftGlass 35mm f/1.4 Cine Lens" width="300" height="300" loading="lazy">
-                            <div class="product-label"><span class="sale">-17%</span></div>
-                            <div class="add-to-cart">
-                                <button type="button" class="add-to-cart-btn" onclick="addToCart('KraftGlass 35mm f/1.4 Cine Lens', 2890, 'https://images.unsplash.com/photo-1617005082133-548c4dd27f35?auto=format&amp;fit=crop&amp;w=200&amp;q=80')">🛒 add to cart</button>
-                            </div>
-                        </div>
-                        <div class="product-body">
-                            <p class="product-category">Lenses &amp; Rigs</p>
-                            <h3 class="product-name">KraftGlass 35mm f/1.4 Cine Lens</h3>
-                            <h4 class="product-price js-price" data-myr="2890" data-old-myr="3490">RM 2,890.00 <del class="product-old-price">RM 3,490.00</del></h4>
-                            <div class="product-rating" aria-label="5 out of 5 stars">★★★★★</div>
-                            <div class="product-btns">
-                                <button type="button" onclick="addToWishlist('KraftGlass 35mm f/1.4 Cine Lens')" title="Add to wishlist" aria-label="Add KraftGlass 35mm f/1.4 Cine Lens to wishlist">♡</button>
-                            </div>
-                        </div>
+                </div>
+                <div class="product-body">
+                    <p class="product-category">OEM Parts</p>
+                    <h3 class="product-name">Carbon Shutter Blade Unit</h3>
+                    <h4 class="product-price js-price" data-myr="420" data-old-myr="550">RM 420.00 <del class="product-old-price">RM 550.00</del></h4>
+                    <div class="product-rating" aria-label="5 out of 5 stars">★★★★★</div>
+                    <div class="product-btns">
+                        <button type="button" onclick="addToWishlist('Carbon Shutter Blade Unit')" title="Add to wishlist" aria-label="Add Carbon Shutter Blade Unit to wishlist">♡</button>
                     </div>
+                </div>
+            </div>
+            <div class="product" data-cat="parts">
+                <div class="product-img">
+                    <img src="https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?auto=format&amp;fit=crop&amp;w=600&amp;q=80" alt="CNC Titanium E-Mount Bayonet Ring" width="300" height="300" loading="lazy">
+                    <div class="product-label"><span class="sale">-25%</span></div>
+                    <div class="add-to-cart">
+                        <button type="button" class="add-to-cart-btn" onclick="addToCart('CNC Titanium E-Mount Bayonet Ring', 195, 'https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?auto=format&amp;fit=crop&amp;w=200&amp;q=80')">🛒 add to cart</button>
+                    </div>
+                </div>
+                <div class="product-body">
+                    <p class="product-category">OEM Parts</p>
+                    <h3 class="product-name">CNC Titanium E-Mount Bayonet Ring</h3>
+                    <h4 class="product-price js-price" data-myr="195" data-old-myr="260">RM 195.00 <del class="product-old-price">RM 260.00</del></h4>
+                    <div class="product-rating" aria-label="5 out of 5 stars">★★★★★</div>
+                    <div class="product-btns">
+                        <button type="button" onclick="addToWishlist('CNC Titanium E-Mount Bayonet Ring')" title="Add to wishlist" aria-label="Add CNC Titanium E-Mount Bayonet Ring to wishlist">♡</button>
+                    </div>
+                </div>
+            </div>
+            <div class="product" data-cat="parts">
+                <div class="product-img">
+                    <img src="https://images.unsplash.com/photo-1581092335397-9583fe92d232?auto=format&amp;fit=crop&amp;w=600&amp;q=80" alt="Mainboard LCD Flex Ribbon Cable" width="300" height="300" loading="lazy">
+                    <div class="add-to-cart">
+                        <button type="button" class="add-to-cart-btn" onclick="addToCart('Mainboard LCD Flex Ribbon Cable', 140, 'https://images.unsplash.com/photo-1581092335397-9583fe92d232?auto=format&amp;fit=crop&amp;w=200&amp;q=80')">🛒 add to cart</button>
+                    </div>
+                </div>
+                <div class="product-body">
+                    <p class="product-category">OEM Parts</p>
+                    <h3 class="product-name">Mainboard LCD Flex Ribbon Cable</h3>
+                    <h4 class="product-price js-price" data-myr="140">RM 140.00</h4>
+                    <div class="product-rating" aria-label="5 out of 5 stars">★★★★★</div>
+                    <div class="product-btns">
+                        <button type="button" onclick="addToWishlist('Mainboard LCD Flex Ribbon Cable')" title="Add to wishlist" aria-label="Add Mainboard LCD Flex Ribbon Cable to wishlist">♡</button>
+                    </div>
+                </div>
+            </div>
+            <div class="product" data-cat="lenses">
+                <div class="product-img">
+                    <img src="https://images.unsplash.com/photo-1617005082133-548c4dd27f35?auto=format&amp;fit=crop&amp;w=600&amp;q=80" alt="KraftGlass 50mm f/1.2 Prime" width="300" height="300" loading="lazy">
+                    <div class="product-label"><span class="sale">-22%</span></div>
+                    <div class="add-to-cart">
+                        <button type="button" class="add-to-cart-btn" onclick="addToCart('KraftGlass 50mm f/1.2 Prime', 3290, 'https://images.unsplash.com/photo-1617005082133-548c4dd27f35?auto=format&amp;fit=crop&amp;w=200&amp;q=80')">🛒 add to cart</button>
+                    </div>
+                </div>
+                <div class="product-body">
+                    <p class="product-category">Lenses &amp; Rigs</p>
+                    <h3 class="product-name">KraftGlass 50mm f/1.2 Prime</h3>
+                    <h4 class="product-price js-price" data-myr="3290" data-old-myr="4200">RM 3,290.00 <del class="product-old-price">RM 4,200.00</del></h4>
+                    <div class="product-rating" aria-label="5 out of 5 stars">★★★★★</div>
+                    <div class="product-btns">
+                        <button type="button" onclick="addToWishlist('KraftGlass 50mm f/1.2 Prime')" title="Add to wishlist" aria-label="Add KraftGlass 50mm f/1.2 Prime to wishlist">♡</button>
+                    </div>
+                </div>
+            </div>
+            <div class="product" data-cat="lenses">
+                <div class="product-img">
+                    <img src="https://images.unsplash.com/photo-1617005082133-548c4dd27f35?auto=format&amp;fit=crop&amp;w=600&amp;q=80" alt="KraftGlass 35mm f/1.4 Cine Lens" width="300" height="300" loading="lazy">
+                    <div class="product-label"><span class="sale">-17%</span></div>
+                    <div class="add-to-cart">
+                        <button type="button" class="add-to-cart-btn" onclick="addToCart('KraftGlass 35mm f/1.4 Cine Lens', 2890, 'https://images.unsplash.com/photo-1617005082133-548c4dd27f35?auto=format&amp;fit=crop&amp;w=200&amp;q=80')">🛒 add to cart</button>
+                    </div>
+                </div>
+                <div class="product-body">
+                    <p class="product-category">Lenses &amp; Rigs</p>
+                    <h3 class="product-name">KraftGlass 35mm f/1.4 Cine Lens</h3>
+                    <h4 class="product-price js-price" data-myr="2890" data-old-myr="3490">RM 2,890.00 <del class="product-old-price">RM 3,490.00</del></h4>
+                    <div class="product-rating" aria-label="5 out of 5 stars">★★★★★</div>
+                    <div class="product-btns">
+                        <button type="button" onclick="addToWishlist('KraftGlass 35mm f/1.4 Cine Lens')" title="Add to wishlist" aria-label="Add KraftGlass 35mm f/1.4 Cine Lens to wishlist">♡</button>
+                    </div>
+                </div>
+            </div>
         </div>
         <p id="noResults" class="card-box empty-state" style="display:none;" role="status">No products match your search. Try a different word or category.</p>
 
-        <!-- 4 & 7.4: Products and services table -->
         <div id="services" style="padding-top:25px;">
             <div class="section-title">
                 <h2 class="title">Products &amp; Optical Repair Services</h2>
@@ -429,6 +425,7 @@
                     <ul class="footer-links">
                         <li><a href="login.html">My Account</a></li>
                         <li><a href="signup.html">Create Account</a></li>
+                        <li><a href="wishlist.html">Your Wishlist</a></li>
                         <li><a href="cart.html">View Cart</a></li>
                         <li><a href="#top">↑ Back to Top</a></li>
                     </ul>
@@ -464,13 +461,12 @@
             var name = cards[i].querySelector(".product-name").textContent.toLowerCase();
             var itemCat = cards[i].getAttribute("data-cat");
             var show = name.indexOf(q) > -1 && (cat === "all" || itemCat === cat);
-            cards[i].style.display = show ? "" : "none";   // "" keeps the CSS grid layout
+            cards[i].style.display = show ? "" : "none";
             if (show) visible++;
         }
         document.getElementById("noResults").style.display = visible ? "none" : "";
     }
 
-    // Header search on other pages sends ?cat=...&q=... to this page
     window.addEventListener("DOMContentLoaded", function () {
         var params = new URLSearchParams(window.location.search);
         var cat = params.get("cat");

@@ -1,17 +1,52 @@
-/* ==========================================================================
-   OPTIKRAFT EXTERNAL JAVASCRIPT FILE (script.js)
-   Used by index.html, products.html, cart.html and checkout.html
-   Linked via <script src="script.js" defer></script>
-   ========================================================================== */
-
-/* ---------- Settings (edit these) ---------- */
 var CART_KEY = "optikraftCart";
 var WISHLIST_KEY = "optikraftWishlist";
-var SHIPPING_FLAT_MYR = 15;          // shipping fee for small orders
-var FREE_SHIPPING_OVER_MYR = 500;    // orders from this amount ship free
+var SHIPPING_FLAT_MYR = 15;
+var FREE_SHIPPING_OVER_MYR = 500;
 var MAX_QTY = 99;
 
-/* ---------- Storage helpers (the cart survives page changes and reloads) ---------- */
+var CATALOG_PRODUCTS = {
+  "OptiKraft X1 Mirrorless Body": {
+    category: "Cameras",
+    price: 6499,
+    img: "https://images.unsplash.com/photo-1502920917128-1aa500764cbd?auto=format&fit=crop&w=200&q=80"
+  },
+  "OptiKraft Pro Cinema Rig": {
+    category: "Cameras",
+    price: 7850,
+    img: "https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&w=200&q=80"
+  },
+  "MK-IV 35mm CMOS Sensor Unit": {
+    category: "OEM Parts",
+    price: 1450,
+    img: "https://i.ebayimg.com/images/g/ep8AAOSwtEZdDGCz/s-l1200.jpg"
+  },
+  "Carbon Shutter Blade Unit": {
+    category: "OEM Parts",
+    price: 420,
+    img: "https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?auto=format&fit=crop&w=200&q=80"
+  },
+  "CNC Titanium E-Mount Bayonet Ring": {
+    category: "OEM Parts",
+    price: 195,
+    img: "https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?auto=format&fit=crop&w=200&q=80"
+  },
+  "Mainboard LCD Flex Ribbon Cable": {
+    category: "OEM Parts",
+    price: 140,
+    img: "https://images.unsplash.com/photo-1581092335397-9583fe92d232?auto=format&fit=crop&w=200&q=80"
+  },
+  "KraftGlass 50mm f/1.2 Prime": {
+    category: "Lenses & Rigs",
+    price: 3290,
+    img: "https://images.unsplash.com/photo-1617005082133-548c4dd27f35?auto=format&fit=crop&w=200&q=80"
+  },
+  "KraftGlass 35mm f/1.4 Cine Lens": {
+    category: "Lenses & Rigs",
+    price: 2890,
+    img: "https://images.unsplash.com/photo-1617005082133-548c4dd27f35?auto=format&fit=crop&w=200&q=80"
+  }
+};
+
 function loadStored(key) {
   try {
     var raw = localStorage.getItem(key);
@@ -36,18 +71,16 @@ function loadCartItems() {
   });
 }
 
-/* ---------- Global state ---------- */
-var cartItems = loadCartItems();           // [{ name, price (MYR), img, qty }]
-var cartCount = 0;                         // total quantity of items
-var cartSubtotalMYR = 0;                   // always stored in MYR
+var cartItems = loadCartItems();
+var cartCount = 0;
+var cartSubtotalMYR = 0;
 
 var wishlist = loadStored(WISHLIST_KEY).filter(function (n) { return typeof n === "string"; });
-var wishlistCount = wishlist.length;       // used by the inline wishlist alert in index.html
+var wishlistCount = wishlist.length;
 
 var orderPlaced = false;
 var cartCloseTimer = null;
 
-// Approximate fixed rates (index.html only; cart and checkout always use MYR).
 var currencies = {
   MYR: { rate: 1,    symbol: "RM " },
   USD: { rate: 0.23, symbol: "$" },
@@ -55,7 +88,6 @@ var currencies = {
 };
 var currentCurrency = "MYR";
 
-/* ---------- Small helpers ---------- */
 function formatMoney(amountMYR) {
   var c = currencies[currentCurrency] || currencies.MYR;
   var value = (amountMYR * c.rate).toLocaleString("en-MY", {
@@ -86,7 +118,7 @@ function updateTotals() {
   cartCount = 0;
   cartSubtotalMYR = 0;
   for (var i = 0; i < cartItems.length; i++) {
-    cartCount += cartItems[i].qty;                               // += operator
+    cartCount += cartItems[i].qty;
     cartSubtotalMYR += cartItems[i].price * cartItems[i].qty;
   }
 }
@@ -96,13 +128,11 @@ function getShipping(subtotalMYR) {
   return subtotalMYR >= FREE_SHIPPING_OVER_MYR ? 0 : SHIPPING_FLAT_MYR;
 }
 
-/* 1. Toggle Mobile Navigation Menu */
 function toggleMobileMenu() {
   var nav = document.getElementById("mainNav");
   if (nav) nav.classList.toggle("show");
 }
 
-/* 2. Header cart dropdown (open / close / toggle) */
 function openCartDropdown() {
   var dropdown = document.getElementById("cartDropdown");
   if (dropdown) dropdown.classList.add("open");
@@ -118,7 +148,6 @@ function toggleCartDropdown() {
   if (dropdown) dropdown.classList.toggle("open");
 }
 
-/* 3. Draw the header cart (list, badge, summary, subtotal) */
 function renderCart() {
   updateTotals();
 
@@ -160,10 +189,9 @@ function renderCart() {
 
   setText("cartQtyBadge", cartCount);
   setText("cartSummaryCount", cartCount + " Item(s) selected");
-  setText("cartSubTotalText", "SUBTOTAL: " + formatMoney(cartSubtotalMYR));   // capital T matches the HTML
+  setText("cartSubTotalText", "SUBTOTAL: " + formatMoney(cartSubtotalMYR));
 }
 
-/* 4. Fill a Subtotal / Shipping / Total block (used on cart and checkout pages) */
 function fillSummary(subId, shipId, totalId, hintId) {
   var sub = cartSubtotalMYR;
   var ship = getShipping(sub);
@@ -183,10 +211,9 @@ function fillSummary(subId, shipId, totalId, hintId) {
   }
 }
 
-/* 5. Cart page (cart.html) */
 function renderCartPage() {
   var body = document.getElementById("cartPageItems");
-  if (!body) return;                      // not on the cart page
+  if (!body) return;
 
   updateTotals();
   var hasItems = cartItems.length > 0;
@@ -198,7 +225,6 @@ function renderCartPage() {
   cartItems.forEach(function (item, index) {
     var tr = el("tr");
 
-    // Product
     var tdProduct = el("td");
     var wrap = el("div", "cart-product");
     var img = el("img");
@@ -212,10 +238,8 @@ function renderCartPage() {
     wrap.appendChild(link);
     tdProduct.appendChild(wrap);
 
-    // Unit price
     var tdPrice = el("td", null, formatMoney(item.price));
 
-    // Quantity controls
     var tdQty = el("td");
     var qc = el("div", "qty-control");
     var minus = el("button", null, "\u2212");
@@ -232,11 +256,9 @@ function renderCartPage() {
     qc.appendChild(plus);
     tdQty.appendChild(qc);
 
-    // Line total
     var tdTotal = el("td");
     tdTotal.appendChild(el("strong", null, formatMoney(item.price * item.qty)));
 
-    // Remove
     var tdRemove = el("td");
     var removeBtn = el("button", "remove-btn", "Remove");
     removeBtn.type = "button";
@@ -255,10 +277,9 @@ function renderCartPage() {
   fillSummary("cartSubtotal", "cartShipping", "cartTotal", "shippingHint");
 }
 
-/* 6. Checkout page (checkout.html): order summary */
 function renderCheckoutSummary() {
   var list = document.getElementById("checkoutItems");
-  if (!list || orderPlaced) return;       // not on checkout, or the order is done
+  if (!list || orderPlaced) return;
 
   updateTotals();
   var hasItems = cartItems.length > 0;
@@ -276,7 +297,6 @@ function renderCheckoutSummary() {
   fillSummary("coSubtotal", "coShipping", "coTotal", "coHint");
 }
 
-/* 7. Place the order (demo: no real payment is processed) */
 function placeOrder(e) {
   e.preventDefault();
   if (cartItems.length === 0) return false;
@@ -303,7 +323,6 @@ function placeOrder(e) {
   return false;
 }
 
-/* 8. Cart actions */
 function refreshCart() {
   saveStored(CART_KEY, cartItems);
   renderCart();
@@ -311,10 +330,8 @@ function refreshCart() {
   renderCheckoutSummary();
 }
 
-function addToCart(productName, priceMYR, imgUrl) {
+function pushItemToCartArray(productName, priceMYR, imgUrl) {
   var found = false;
-
-  // Same product already in the cart? Increase its quantity (++ operator)
   for (var i = 0; i < cartItems.length; i++) {
     if (cartItems[i].name === productName) {
       if (cartItems[i].qty < MAX_QTY) cartItems[i].qty++;
@@ -322,11 +339,13 @@ function addToCart(productName, priceMYR, imgUrl) {
       break;
     }
   }
-
   if (!found) {
     cartItems.push({ name: productName, price: priceMYR, img: imgUrl, qty: 1 });
   }
+}
 
+function addToCart(productName, priceMYR, imgUrl) {
+  pushItemToCartArray(productName, priceMYR, imgUrl);
   refreshCart();
 
   if (document.getElementById("cartDropdown")) {
@@ -334,7 +353,6 @@ function addToCart(productName, priceMYR, imgUrl) {
     clearTimeout(cartCloseTimer);
     cartCloseTimer = setTimeout(closeCartDropdown, 3500);
   } else {
-    // Pages without the dropdown (e.g. products.html) just confirm
     alert("Added '" + productName + "' to your cart.");
   }
 }
@@ -356,31 +374,168 @@ function clearCart() {
   refreshCart();
 }
 
-/* 9. Wishlist */
 function updateWishlistBadge() {
+  wishlistCount = wishlist.length;
   setText("wishlistQtyBadge", wishlistCount);
+}
+
+function renderWishlistPage() {
+  var rowsEl = document.getElementById("wishlistRows");
+  if (!rowsEl) return;
+
+  var count = wishlist.length;
+  setText("wlCount", count + (count === 1 ? " ITEM" : " ITEMS"));
+  show("wishlistToolbar", count > 0);
+  show("wishlistRows", count > 0);
+  show("wishlistEmpty", count === 0);
+
+  rowsEl.textContent = "";
+  var wishlistTotalMYR = 0;
+
+  wishlist.forEach(function (productName, index) {
+    var info = CATALOG_PRODUCTS[productName] || {
+      category: "Hardware",
+      price: 0,
+      img: "OptiKraft-Logo.jpeg"
+    };
+
+    wishlistTotalMYR += info.price;
+
+    var row = el("div", "wl-item card-box");
+
+    var left = el("div", "cart-product");
+    var img = el("img");
+    img.src = info.img;
+    img.alt = productName;
+    img.width = 72;
+    img.height = 72;
+
+    var meta = el("div");
+    var cat = el("p", "widget-cat", info.category.toUpperCase());
+    var title = el("a", null, productName);
+    title.href = "products.html";
+    var price = el("p", "wl-price", info.price > 0 ? formatMoney(info.price) : "View in Catalog");
+    meta.appendChild(cat);
+    meta.appendChild(title);
+    meta.appendChild(price);
+
+    left.appendChild(img);
+    left.appendChild(meta);
+
+    var actions = el("div", "wl-actions");
+    if (info.price > 0) {
+      var moveBtn = el("button", "primary-btn btn-sm", "Move to Cart");
+      moveBtn.type = "button";
+      moveBtn.addEventListener("click", function () {
+        moveWishlistItemToCart(index);
+      });
+      actions.appendChild(moveBtn);
+
+      var addBtn = el("button", "btn-outline btn-sm", "Add to Cart");
+      addBtn.type = "button";
+      addBtn.addEventListener("click", function () {
+        addToCart(productName, info.price, info.img);
+      });
+      actions.appendChild(addBtn);
+    }
+
+    var removeBtn = el("button", "remove-btn", "Remove");
+    removeBtn.type = "button";
+    removeBtn.addEventListener("click", function () {
+      removeWishlistItem(index);
+    });
+    actions.appendChild(removeBtn);
+
+    row.appendChild(left);
+    row.appendChild(actions);
+    rowsEl.appendChild(row);
+  });
+
+  setText("wlTotalValue", formatMoney(wishlistTotalMYR));
+}
+
+function removeWishlistItem(index) {
+  wishlist.splice(index, 1);
+  saveStored(WISHLIST_KEY, wishlist);
+  updateWishlistBadge();
+  renderWishlistPage();
+}
+
+function moveWishlistItemToCart(index) {
+  var productName = wishlist[index];
+  if (!productName) return;
+  var info = CATALOG_PRODUCTS[productName];
+  if (info && info.price > 0) {
+    pushItemToCartArray(productName, info.price, info.img);
+    refreshCart();
+  }
+  wishlist.splice(index, 1);
+  saveStored(WISHLIST_KEY, wishlist);
+  updateWishlistBadge();
+  renderWishlistPage();
+  if (document.getElementById("cartDropdown")) {
+    openCartDropdown();
+    clearTimeout(cartCloseTimer);
+    cartCloseTimer = setTimeout(closeCartDropdown, 3500);
+  }
+}
+
+function moveAllWishlistToCart() {
+  if (wishlist.length === 0) return;
+  var movedCount = 0;
+
+  for (var i = 0; i < wishlist.length; i++) {
+    var productName = wishlist[i];
+    var info = CATALOG_PRODUCTS[productName];
+    if (info && info.price > 0) {
+      pushItemToCartArray(productName, info.price, info.img);
+      movedCount++;
+    }
+  }
+
+  wishlist = [];
+  saveStored(WISHLIST_KEY, wishlist);
+  updateWishlistBadge();
+  refreshCart();
+  renderWishlistPage();
+
+  if (movedCount > 0 && document.getElementById("cartDropdown")) {
+    openCartDropdown();
+    clearTimeout(cartCloseTimer);
+    cartCloseTimer = setTimeout(closeCartDropdown, 3500);
+  }
+}
+
+function confirmClearWishlist() {
+  if (wishlist.length === 0) return;
+  if (confirm("Remove all items from your wishlist?")) {
+    resetWishlist();
+  }
 }
 
 function addToWishlist(productName) {
   if (wishlist.indexOf(productName) !== -1) {
-    alert("'" + productName + "' is already in Your Wishlist.");
+    window.location.href = "wishlist.html";
     return;
   }
   wishlist.push(productName);
-  wishlistCount = wishlist.length;
   saveStored(WISHLIST_KEY, wishlist);
   updateWishlistBadge();
+  renderWishlistPage();
   alert("Added '" + productName + "' to Your Wishlist!");
 }
 
 function resetWishlist() {
   wishlist = [];
-  wishlistCount = 0;
   saveStored(WISHLIST_KEY, wishlist);
   updateWishlistBadge();
+  renderWishlistPage();
 }
 
-/* 10. Currency Switcher (index.html: MYR / USD / SGD) */
+function showWishlist() {
+  window.location.href = "wishlist.html";
+}
+
 function switchCurrency(selectEl) {
   currentCurrency = currencies[selectEl.value] ? selectEl.value : "MYR";
 
@@ -400,9 +555,9 @@ function switchCurrency(selectEl) {
   }
 
   renderCart();
+  renderWishlistPage();
 }
 
-/* 11. Filter Product Tabs */
 function filterTab(category, linkEl) {
   var links = linkEl.parentElement.parentElement.querySelectorAll("a");
   for (var i = 0; i < links.length; i++) {
@@ -417,7 +572,6 @@ function filterTab(category, linkEl) {
   }
 }
 
-/* 12. Hot Deal Live Countdown Timer */
 function startHotDealTimer() {
   var dEl = document.getElementById("cdDays");
   var hEl = document.getElementById("cdHours");
@@ -447,26 +601,12 @@ function startHotDealTimer() {
   setInterval(tick, 1000);
 }
 
-/* 13. Wishlist viewer */
-function showWishlist() {
-  if (wishlist.length === 0) {
-    alert("Your wishlist is empty.");
-    return;
-  }
-  alert("Your Wishlist (" + wishlist.length + "):\n- " + wishlist.join("\n- "));
-}
-
-/* 14. Demo accounts (saved in THIS browser only; real logins need a secure server) */
-
-// Set to true ONLY when the pages are served by XAMPP/PHP and handle_auth.php exists.
-// While false, the forms are checked and handled in the browser.
 var USE_PHP_BACKEND = false;
 function usePhp() { return USE_PHP_BACKEND; }
 
 var USERS_KEY = "optikraftUsers";
 var SESSION_KEY = "optikraftSession";
 
-// Small non-cryptographic hash so passwords are never stored as plain text (demo only)
 function hashText(str) {
   var h1 = 0xdeadbeef, h2 = 0x41c6ce57;
   for (var i = 0, ch; i < str.length; i++) {
@@ -525,7 +665,6 @@ function logoutUser() {
   window.location.href = "index.html";
 }
 
-// Header: "My Account" becomes "Hi, Name" + Logout, and the Login / Sign Up menu items hide
 function renderAccountLinks() {
   var session = getSession();
 
@@ -552,7 +691,6 @@ function renderAccountLinks() {
   }
 }
 
-// Checkout: fill name and email for logged-in customers
 function prefillCheckout() {
   var session = getSession();
   var nameField = document.getElementById("fullName");
@@ -562,19 +700,18 @@ function prefillCheckout() {
   if (!emailField.value) emailField.value = session.email;
 }
 
-/* 15. Start-up */
 function initOptiKraft() {
   var picker = document.getElementById("currencyPicker");
   if (picker) {
-    switchCurrency(picker);        // also draws the header cart
+    switchCurrency(picker);
   } else {
     renderCart();
   }
   renderCartPage();
   renderCheckoutSummary();
   updateWishlistBadge();
+  renderWishlistPage();
 
-  // Remove the plain-text password the old sign-up page used to save
   try {
     ["optikraft_user", "optikraft_email", "optikraft_pass"].forEach(function (k) { localStorage.removeItem(k); });
   } catch (e) {}
@@ -582,7 +719,6 @@ function initOptiKraft() {
   renderAccountLinks();
   prefillCheckout();
 
-  // Click on "Your Cart" toggles the dropdown (touch screens too)
   var dropdown = document.getElementById("cartDropdown");
   if (dropdown && dropdown.parentElement) {
     var cartLink = dropdown.parentElement.querySelector("a");
@@ -601,13 +737,17 @@ function initOptiKraft() {
     if (e.key === "Escape") closeCartDropdown();
   });
 
-  // Keep several open tabs in sync
   window.addEventListener("storage", function (e) {
     if (e.key === CART_KEY) {
       cartItems = loadCartItems();
       renderCart();
       renderCartPage();
       renderCheckoutSummary();
+    }
+    if (e.key === WISHLIST_KEY) {
+      wishlist = loadStored(WISHLIST_KEY).filter(function (n) { return typeof n === "string"; });
+      updateWishlistBadge();
+      renderWishlistPage();
     }
   });
 

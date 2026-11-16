@@ -57,7 +57,7 @@
 
                 <div class="header-ctn">
                     <div class="ctn-item">
-                        <a href="#" role="button" onclick="showWishlist(); return false;">
+                        <a href="wishlist.html">
                             <span class="ctn-icon" aria-hidden="true">♡</span>
                             <span>Your Wishlist</span>
                             <div class="qty" id="wishlistQtyBadge">0</div>
@@ -112,7 +112,6 @@
     </nav>
 
     <main id="main">
-        <!-- WELCOME + SHOP GRID -->
         <section class="section">
             <div class="container">
                 <div class="card-box welcome-box">
@@ -143,7 +142,6 @@
             </div>
         </section>
 
-        <!-- NEW PRODUCTS -->
         <section class="section">
             <div class="container">
                 <div class="section-title">
@@ -177,10 +175,10 @@
                     </div>
                     <div class="product" data-cat="parts">
                         <div class="product-img">
-                            <a href="products.html"><img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&amp;fit=crop&amp;w=600&amp;q=80" alt="MK-IV 35mm CMOS Sensor Unit" width="300" height="300" loading="lazy"></a>
+                            <a href="products.html"><img src="https://i.ebayimg.com/images/g/ep8AAOSwtEZdDGCz/s-l1200.jpg" alt="MK-IV 35mm CMOS Sensor Unit" width="300" height="300" loading="lazy"></a>
                             <div class="product-label"><span class="sale">-14%</span><span class="new">NEW</span></div>
                             <div class="add-to-cart">
-                                <button type="button" class="add-to-cart-btn" onclick="addToCart('MK-IV 35mm CMOS Sensor Unit', 1450, 'https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&amp;fit=crop&amp;w=200&amp;q=80')">🛒 add to cart</button>
+                                <button type="button" class="add-to-cart-btn" onclick="addToCart('MK-IV 35mm CMOS Sensor Unit', 1450, 'https://i.ebayimg.com/images/g/ep8AAOSwtEZdDGCz/s-l1200.jpg')">🛒 add to cart</button>
                             </div>
                         </div>
                         <div class="product-body">
@@ -236,7 +234,6 @@
             </div>
         </section>
 
-        <!-- HOT DEAL -->
         <section id="hot-deal" class="section">
             <div class="container">
                 <div class="hot-deal">
@@ -253,7 +250,6 @@
             </div>
         </section>
 
-        <!-- IMAGE MAP -->
         <section class="section">
             <div class="container">
                 <div class="card-box two-col-grid" style="align-items:center;">
@@ -273,7 +269,6 @@
             </div>
         </section>
 
-        <!-- TOP SELLING WIDGETS -->
         <section class="section">
             <div class="container">
                 <div class="widget-columns">
@@ -297,7 +292,7 @@
                     </div>
                     <div class="widget-col"><h3 class="title">Top Selling OEM Parts</h3>
                         <div class="product-widget">
-                            <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&amp;fit=crop&amp;w=200&amp;q=80" alt="MK-IV 35mm CMOS Sensor Unit" width="60" height="60" loading="lazy">
+                            <img src="https://i.ebayimg.com/images/g/ep8AAOSwtEZdDGCz/s-l1200.jpg" alt="MK-IV 35mm CMOS Sensor Unit" width="60" height="60" loading="lazy">
                             <div class="product-body">
                                 <p class="widget-cat">OEM PARTS</p>
                                 <h4><a href="products.html">MK-IV 35mm CMOS Sensor Unit</a></h4>
@@ -335,11 +330,10 @@
             </div>
         </section>
 
-        <!-- NEWSLETTER -->
         <section id="newsletter" class="section">
             <div class="container">
                 <div class="newsletter">
-                    <p>Sign Up for the <strong>NEWSLETTER</strong></p>
+                    <p>Sign Up to become <strong>OPTIKRAFT</strong></p>
                     <form onsubmit="event.preventDefault(); alert('Thank you for subscribing to the OptiKraft Newsletter!'); this.reset();">
                         <input class="input" type="email" placeholder="Enter Your Email" aria-label="Email address" autocomplete="email" required>
                         <button type="submit" class="newsletter-btn">✉ Subscribe</button>
@@ -397,6 +391,7 @@
                     <ul class="footer-links">
                         <li><a href="login.html">My Account</a></li>
                         <li><a href="signup.html">Create Account</a></li>
+                        <li><a href="wishlist.html">Your Wishlist</a></li>
                         <li><a href="cart.html">View Cart</a></li>
                         <li><a href="#top">↑ Back to Top</a></li>
                     </ul>

@@ -49,7 +49,7 @@
 
                 <div class="header-ctn">
                     <div class="ctn-item">
-                        <a href="#" role="button" onclick="showWishlist(); return false;">
+                        <a href="wishlist.html">
                             <span class="ctn-icon" aria-hidden="true">♡</span>
                             <span>Your Wishlist</span>
                             <div class="qty" id="wishlistQtyBadge">0</div>
@@ -118,7 +118,6 @@
                     <a href="https://maps.app.goo.gl/UQxLYgRSZ3BveFzy9" target="_blank" rel="noopener" class="primary-btn">View Lab on Google Maps ↗</a>
                 </div>
 
-                <!-- Exercise 1: username, quantity, price, tax -->
                 <div class="card-box">
                     <span class="eyebrow">Order Calculator</span>
                     <h2 class="card-h" style="color:var(--electro-text);">Hardware Order Cost Estimator</h2>
@@ -134,11 +133,11 @@
                         <div class="two-col-grid" style="gap:12px;">
                             <div class="form-group">
                                 <label for="calcQty">Quantity *</label>
-                                <input type="number" id="calcQty" name="quantity" class="form-control" value="2" min="1" step="1" required>
+                                <input type="number" id="calcQty" name="quantity" class="form-control" value="0" min="1" step="1" required>
                             </div>
                             <div class="form-group">
                                 <label for="calcPrice">Unit Price (RM) *</label>
-                                <input type="number" id="calcPrice" name="price" class="form-control" value="420" min="0" step="0.01" required>
+                                <input type="number" id="calcPrice" name="price" class="form-control" value="0.00" min="0" step="0.01" required>
                             </div>
                         </div>
 
@@ -153,7 +152,6 @@
                 </div>
             </div>
 
-            <!-- 4 & 7.5: Contact form -->
             <div class="card-box">
                 <h2 class="card-h" style="color:var(--electro-text);">Contact &amp; Service Inquiry Form</h2>
 
@@ -174,7 +172,6 @@
                         </div>
                     </div>
 
-                    <!-- Datalist -->
                     <div class="form-group">
                         <label for="cityInput">City</label>
                         <input type="text" id="cityInput" name="city" list="cities" class="form-control" placeholder="Type or select a city..." autocomplete="address-level2">
@@ -190,7 +187,6 @@
                     </div>
 
                     <div class="two-col-grid" style="gap:15px;">
-                        <!-- Select with optgroup -->
                         <div class="form-group">
                             <label for="choices">Service Hub</label>
                             <select id="choices" name="choices" class="form-control">
@@ -205,7 +201,6 @@
                             </select>
                         </div>
 
-                        <!-- File upload -->
                         <div class="form-group">
                             <label for="damagePhoto">Attach Issue Photo</label>
                             <input type="file" id="damagePhoto" name="damagePhoto" class="form-control" accept="image/*">
@@ -270,6 +265,7 @@
                     <ul class="footer-links">
                         <li><a href="login.html">My Account</a></li>
                         <li><a href="signup.html">Create Account</a></li>
+                        <li><a href="wishlist.html">Your Wishlist</a></li>
                         <li><a href="cart.html">View Cart</a></li>
                         <li><a href="#top">↑ Back to Top</a></li>
                     </ul>
@@ -293,7 +289,6 @@
     </footer>
 
     <script>
-    // Exercise 1: cost + tax calculator (runs in the browser unless USE_PHP_BACKEND is true in script.js)
     function calcExercise1(event) {
         if (usePhp()) return true;
         event.preventDefault();
